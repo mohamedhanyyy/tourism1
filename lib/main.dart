@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tourism1/routes/pages.dart';
 import 'package:tourism1/routes/routes.dart';
 import 'package:tourism1/themes/colors.dart';
+import 'package:tourism1/themes/themes.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,12 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: Routes.destination,
+      initialRoute: Routes.farmsAndFactories,
       getPages: Pages.routes,
-      theme: ThemeData(
-        primaryColor: ColorConstants.greenColor,
-        primarySwatch: Colors.green,
-      ),
+      theme: AppThemes.whiteTheme,
       debugShowCheckedModeBanner: false,
       title: 'Tourism App',
     );
