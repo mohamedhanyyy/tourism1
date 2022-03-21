@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:tourism1/presentation/destination%20details/binding/destination_details_binding.dart';
+import 'package:tourism1/presentation/destination%20details/view/destination_details_view.dart';
 import 'package:tourism1/presentation/destination/binding/destination_binding.dart';
 import 'package:tourism1/presentation/destination/view/destination_view.dart';
 import 'package:tourism1/presentation/farms%20&%20factories/binding/farms_and_factories_binding.dart';
@@ -21,8 +23,13 @@ abstract class Pages {
     ),
     GetPage(
       name: Routes.farmsAndFactories,
-      page: () =>  FarmsAndFactoriesView(),
+      page: () => FarmsAndFactoriesView(),
       binding: FarmsAndFactoriesBinding(),
+    ),
+    GetPage(
+      name: Routes.destinationDetails,
+      page: () => DestinationDetailsView(),
+      binding: DestinationDetailsBinding(),
     ),
   ];
 }
