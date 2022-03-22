@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-SizedBox fiveHeightSizedBox = const SizedBox(height: 5);
+SizedBox fiveHeightSizedBox =  const SizedBox(height: 5);
 SizedBox eightHeightSizedBox = const SizedBox(height: 8);
-SizedBox tenHeightSizedBox = const SizedBox(height: 10);
-SizedBox fifteenHeightSizedBox = const SizedBox(height: 10);
+SizedBox tenHeightSizedBox =  const SizedBox(height: 10);
+SizedBox fifteenHeightSizedBox = const SizedBox(height: 15);
 SizedBox twentyHeightSizedBox = const SizedBox(height: 20);
 SizedBox twentyFiveHeightSizedBox = const SizedBox(height: 25);
 SizedBox thirtyHeightSizedBox = const SizedBox(height: 30);

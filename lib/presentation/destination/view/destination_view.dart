@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:tourism1/presentation/destination/controller/destination_controller.dart';
-import 'package:tourism1/presentation/farms%20&%20factories/view/farms_and_factories_view.dart';
-import 'package:tourism1/themes/app_sizes.dart';
+ import 'package:tourism1/themes/app_sizes.dart';
 import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/icons_path.dart';
 import 'package:tourism1/utils/paths/images_path.dart';
-import 'package:tourism1/widgets/sized_box.dart';
+import 'package:tourism1/widgets/common%20widgets/sized_box.dart';
 
 import '../../../routes/routes.dart';
-import '../../farms & factories/controller/farms_and_factories_controller.dart';
 
 class DestinationView extends GetView<DestinationController> {
   const DestinationView({Key? key}) : super(key: key);
@@ -19,6 +17,7 @@ class DestinationView extends GetView<DestinationController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         elevation: 0,
         backgroundColor: ColorConstants.whiteColor,
@@ -50,7 +49,7 @@ class DestinationView extends GetView<DestinationController> {
               ConstantImages.sea,
               fit: BoxFit.fill,
               width: Get.width,
-              height: Get.height * 0.2,
+              height: 166,
             ),
             twentyHeightSizedBox,
             Card(
@@ -148,25 +147,32 @@ class DestinationView extends GetView<DestinationController> {
                     ConstantImages.mosque,
                     fit: BoxFit.fill,
                     width: Get.width,
-                    height: Get.height * 0.2,
+                    height: 166,
                   ),
                   twentyHeightSizedBox,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      const Text(
-                        'Religious landmarks',
-                        style:
-                            ConstantTextStyles.semiBoldEighteenPoppinsTextStyle,
-                      ),
-                      ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: ColorConstants.greenColor),
-                          onPressed: () {
-                            Get.toNamed(Routes.farmsAndFactories);
-                          },
-                          child: const Text('Check Posts'))
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(AppPadding.tenPadding),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Religious landmarks',
+                          style:
+                              ConstantTextStyles.semiBoldEighteenPoppinsTextStyle,
+                        ),
+                        SizedBox(
+                          height: 40,
+                          width: 116,
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  primary: ColorConstants.greenColor),
+                              onPressed: () {
+                                Get.toNamed(Routes.farmsAndFactories);
+                              },
+                              child: const Text('Check Posts')),
+                        )
+                      ],
+                    ),
                   ),
                   twentyHeightSizedBox,
                 ],
@@ -181,7 +187,7 @@ class DestinationView extends GetView<DestinationController> {
                     ConstantImages.camel,
                     fit: BoxFit.fill,
                     width: Get.width,
-                    height: Get.height * 0.2,
+                    height: 166,
                   ),
                   twentyHeightSizedBox,
                   ExpansionTile(
