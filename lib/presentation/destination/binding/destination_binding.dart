@@ -4,6 +4,6 @@ import 'package:tourism1/presentation/destination/controller/destination_control
 class DestinationBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => DestinationController());
+    Get.lazyPut(() => DestinationController(),fenix: true);
   }
 }

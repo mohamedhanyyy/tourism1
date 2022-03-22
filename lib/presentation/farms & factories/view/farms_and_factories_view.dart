@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:tourism1/presentation/destination%20details/view/destination_details_view.dart';
 import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/icons_path.dart';
 import 'package:tourism1/widgets/cutsom_text_field.dart';
 import 'package:tourism1/widgets/sized_box.dart';
 
+import '../../../routes/routes.dart';
 import '../../../themes/app_sizes.dart';
 import '../controller/farms_and_factories_controller.dart';
 
@@ -22,6 +22,23 @@ class FarmsAndFactoriesView extends GetView<FarmsAndFactoriesController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        bottom: PreferredSize(
+          child: Padding(
+            padding: const EdgeInsets.all(AppPadding.tenPadding),
+            child: CustomTextField(
+              controller: controller.farmSearchController,
+              suffixIcon: const Icon(Icons.search),
+              hintText: null,
+              suffix: null,
+              labelText: 'Search by city name',
+              radius: 5,
+              fillColor: ColorConstants.lightGreyColor,
+              prefixIcon: null,
+
+            ),
+          ),
+          preferredSize: Size(Get.width, Get.height * 0.09),
+        ),
         title: const Text(
           'Farms and factories',
           style: ConstantTextStyles.headLineTextStyle,
@@ -31,26 +48,17 @@ class FarmsAndFactoriesView extends GetView<FarmsAndFactoriesController> {
         padding: const EdgeInsets.symmetric(horizontal: AppPadding.tenPadding),
         child: ListView(
           children: [
-            CustomTextField(
-              controller: controller.farmSearchController,
-              suffixIcon: const Icon(Icons.search),
-              hintText: null,
-              labelText: 'Search by city name',
-              radius: 5,
-              fillColor: ColorConstants.lightGreyColor,
-              prefixIcon: null,
-            ),
-            twentyHeightSizedBox,
             GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 2,
-                mainAxisSpacing: 2,
+                crossAxisSpacing: 1,
+                mainAxisSpacing: 1,
               ),
               itemBuilder: (BuildContext context, int index) {
                 return FittedBox(
                   child: Padding(
-                    padding: const EdgeInsets.all(AppPadding.tenPadding),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: AppPadding.fivePadding),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -103,7 +111,7 @@ class FarmsAndFactoriesView extends GetView<FarmsAndFactoriesController> {
                         tenHeightSizedBox,
                         InkWell(
                           onTap: () {
-                            Get.to(DestinationDetailsView());
+                            Get.toNamed(Routes.destinationDetails);
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

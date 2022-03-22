@@ -20,12 +20,14 @@ class ConstantTextStyles {
     fontWeight: mediumFontWeight,
     fontFamily: 'Poppins',
     fontSize: 16,
-  );  static const TextStyle mediumFourteenBlackPoppinsTextStyle = TextStyle(
+  );
+  static const TextStyle mediumFourteenBlackPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
     fontWeight: mediumFontWeight,
     fontFamily: 'Poppins',
     fontSize: 14,
-  );  static const TextStyle regularFourteenBlackPoppinsTextStyle = TextStyle(
+  );
+  static const TextStyle regularFourteenBlackPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
     fontWeight: mediumFontWeight,
     fontFamily: 'Poppins',
@@ -42,7 +44,8 @@ class ConstantTextStyles {
     fontWeight: semiBoldFontWeight,
     fontFamily: 'Poppins',
     fontSize: 18,
-  );  static const TextStyle semiBoldSixteenPoppinsTextStyle = TextStyle(
+  );
+  static const TextStyle semiBoldSixteenPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
     fontWeight: semiBoldFontWeight,
     fontFamily: 'Poppins',
@@ -56,6 +59,7 @@ class ConstantTextStyles {
     fontFamily: 'Poppins',
     fontSize: 14,
   );
+
   // TODO Green text styles
   static const TextStyle semiBoldFourteenGreenPoppinsTextStyle = TextStyle(
     color: ColorConstants.greenColor,

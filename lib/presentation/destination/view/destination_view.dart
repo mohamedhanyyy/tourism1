@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:tourism1/presentation/destination/controller/destination_controller.dart';
+import 'package:tourism1/presentation/farms%20&%20factories/view/farms_and_factories_view.dart';
 import 'package:tourism1/themes/app_sizes.dart';
 import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/icons_path.dart';
 import 'package:tourism1/utils/paths/images_path.dart';
 import 'package:tourism1/widgets/sized_box.dart';
+
+import '../../../routes/routes.dart';
+import '../../farms & factories/controller/farms_and_factories_controller.dart';
 
 class DestinationView extends GetView<DestinationController> {
   const DestinationView({Key? key}) : super(key: key);
@@ -158,7 +162,9 @@ class DestinationView extends GetView<DestinationController> {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               primary: ColorConstants.greenColor),
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.toNamed(Routes.farmsAndFactories);
+                          },
                           child: const Text('Check Posts'))
                     ],
                   ),

@@ -5,6 +5,7 @@ class CustomTextField extends StatelessWidget {
   TextEditingController? controller;
   Icon? prefixIcon;
   Icon? suffixIcon;
+  Icon? suffix;
   Color? fillColor = ColorConstants.whiteColor;
   String? labelText ;
   String? hintText ;
@@ -19,6 +20,8 @@ class CustomTextField extends StatelessWidget {
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         fillColor: fillColor,
+        suffix: suffix,
+
         filled: true,
         labelText: labelText,
         border: OutlineInputBorder(
@@ -37,5 +40,7 @@ class CustomTextField extends StatelessWidget {
       this.fillColor,
       this.labelText,
       this.hintText,
-      this.radius});
+      this.radius,
+      this.suffix,
+      });
 }
