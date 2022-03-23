@@ -4,6 +4,7 @@ import 'package:tourism1/themes/colors.dart';
 const FontWeight regularFontWeight = FontWeight.w400;
 const FontWeight mediumFontWeight = FontWeight.w500;
 const FontWeight semiBoldFontWeight = FontWeight.w600;
+const FontWeight normalFontWeight = FontWeight.normal;
 
 class ConstantTextStyles {
   // TODO headline text style
@@ -62,5 +63,25 @@ class ConstantTextStyles {
     fontWeight: semiBoldFontWeight,
     fontFamily: 'Poppins',
     fontSize: 14,
+  );
+  // this hint style is mostly used with textForm Fields
+  static const TextStyle hintLightGrayTextStyle = TextStyle(
+    color: ColorConstants.mediumGreyColor,
+    fontWeight: normalFontWeight,
+    fontSize: 14,
+  );
+
+  static  TextStyle hintWhiteTextStyle = TextStyle(
+    color: ColorConstants.whiteColor.withOpacity(.7),
+    fontWeight: normalFontWeight,
+
+    fontSize: 14,
+  );
+
+  static  const TextStyle headlineWhiteTextStyle = TextStyle(
+    color: ColorConstants.whiteColor,
+    fontWeight: semiBoldFontWeight,
+
+    fontSize: 18,
   );
 }

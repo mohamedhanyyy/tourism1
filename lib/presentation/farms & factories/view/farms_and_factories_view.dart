@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:tourism1/presentation/destination%20details/view/destination_details_view.dart';
+// import 'package:tourism1/presentation/destination%20details/view/destination_details_view.dart';
 import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/icons_path.dart';
@@ -103,7 +103,7 @@ class FarmsAndFactoriesView extends GetView<FarmsAndFactoriesController> {
                         tenHeightSizedBox,
                         InkWell(
                           onTap: () {
-                            Get.to(DestinationDetailsView());
+                          //  Get.to(DestinationDetailsView());
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

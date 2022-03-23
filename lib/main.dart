@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:tourism1/routes/pages.dart';
 import 'package:tourism1/routes/routes.dart';
-import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/themes.dart';
 
 Future<void> main() async {
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: Routes.destinationDetails,
+      initialRoute: Routes.tourismFeed,
       getPages: Pages.routes,
       theme: AppThemes.whiteTheme,
       debugShowCheckedModeBanner: false,
