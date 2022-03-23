@@ -1,44 +1,50 @@
 import 'package:flutter/cupertino.dart';
 import 'package:tourism1/themes/colors.dart';
 
+<<<<<<< HEAD
 const FontWeight regularFontWeight = FontWeight.w400;
 const FontWeight mediumFontWeight = FontWeight.w500;
 const FontWeight semiBoldFontWeight = FontWeight.w600;
 const FontWeight normalFontWeight = FontWeight.normal;
 const FontWeight boldFontWeight = FontWeight.bold;
+=======
+// TODO Font Weights
+>>>>>>> master
 
 class ConstantTextStyles {
+  ConstantTextStyles._();
+
   // TODO headline text style
   static const TextStyle headLineTextStyle = TextStyle(
     color: ColorConstants.blackColor,
-    fontWeight: mediumFontWeight,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppinsSemiBold,
     fontSize: 20,
   );
 
-  // TODO Black text styles
+  ///  Medium Black text styles
   static const TextStyle mediumSixteenBlackPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
-    fontWeight: mediumFontWeight,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppinsMedium,
     fontSize: 16,
-  );  static const TextStyle mediumFourteenBlackPoppinsTextStyle = TextStyle(
+  );
+  static const TextStyle mediumFourteenBlackPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
-    fontWeight: mediumFontWeight,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppinsMedium,
     fontSize: 14,
-  );  static const TextStyle regularFourteenBlackPoppinsTextStyle = TextStyle(
+  );
+
+  ///  Regular Black text style
+  static const TextStyle regularFourteenBlackPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
-    fontWeight: mediumFontWeight,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppinsRegular,
     fontSize: 14,
   );
   static const TextStyle regularSixteenPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
-    fontWeight: regularFontWeight,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppinsRegular,
     fontSize: 16,
   );
+<<<<<<< HEAD
   static const TextStyle regularSixteenDefaultTextStyle = TextStyle(
     color: ColorConstants.blackColor,
     fontWeight: regularFontWeight,
@@ -54,30 +60,33 @@ class ConstantTextStyles {
     fontWeight: boldFontWeight,
     fontSize: 16,
   );
+=======
+
+  ///  TODO SemiBold Black text styles
+
+>>>>>>> master
   static const TextStyle semiBoldEighteenPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
-    fontWeight: semiBoldFontWeight,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppinsSemiBold,
     fontSize: 18,
-  );  static const TextStyle semiBoldSixteenPoppinsTextStyle = TextStyle(
+  );
+  static const TextStyle semiBoldSixteenPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
-    fontWeight: semiBoldFontWeight,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppinsSemiBold,
     fontSize: 16,
   );
 
-  // TODO White text styles
+  ///  [TextStyle] White text styles
   static const TextStyle mediumFourteenWhitePoppinsTextStyle = TextStyle(
     color: ColorConstants.whiteColor,
-    fontWeight: mediumFontWeight,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppinsMedium,
     fontSize: 14,
   );
-  // TODO Green text styles
+
+  /// Green text styles
   static const TextStyle semiBoldFourteenGreenPoppinsTextStyle = TextStyle(
     color: ColorConstants.greenColor,
-    fontWeight: semiBoldFontWeight,
-    fontFamily: 'Poppins',
+    fontFamily: FontFamily.poppinsSemiBold,
     fontSize: 14,
   );
   static const TextStyle semiBoldFourteenGreenDefaultTextStyle = TextStyle(
@@ -106,4 +115,10 @@ class ConstantTextStyles {
 
     fontSize: 18,
   );
+}
+
+class FontFamily {
+  static const String poppinsRegular = 'Poppins-Regular';
+  static const String poppinsMedium = 'Poppins-Medium';
+  static const String poppinsSemiBold = 'Poppins-SemiBold';
 }

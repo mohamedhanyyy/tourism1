@@ -17,11 +17,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+<<<<<<< HEAD
       initialRoute: Routes.tourismFeed,
+=======
+      initialRoute: Routes.destination,
+>>>>>>> master
       getPages: Pages.routes,
       theme: AppThemes.whiteTheme,
       debugShowCheckedModeBanner: false,
       title: 'Tourism App',
+
     );
   }
 }
