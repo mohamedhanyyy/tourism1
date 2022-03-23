@@ -7,10 +7,8 @@ import 'package:tourism1/themes/app_sizes.dart';
 import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/images_path.dart';
-import 'package:tourism1/widgets/cutsom_text_field.dart';
-import 'package:tourism1/widgets/sized_box.dart';
-
 import '../../../utils/paths/icons_path.dart';
+import '../../../widgets/common widgets/sized_box.dart';
 import '../../../widgets/image_carousel_slider.dart';
 import '../../../widgets/post_text_field.dart';
 
@@ -20,6 +18,14 @@ class TourismFeedView extends StatefulWidget {
 }
 
 class _TourismFeedViewState extends State<TourismFeedView> {
+
+  List<Map<String,String>> categories=[
+    {'Tourist Attraction':ConstantIcons.noFlyingGreen},
+    {'Religious LandMarks':'assets/icons/noun-mosque-2382544.svg'},
+    {'Archaeological Sites':ConstantIcons.noAncientGreen},
+    {'Public Gardens':ConstantIcons.noParkGreen},
+  ];
+
   List<BottomNavigationBarItem> navBar=[
     BottomNavigationBarItem(icon: Icon(Icons.filter),label: 'Item1'),
     BottomNavigationBarItem(icon: Padding(
@@ -77,7 +83,7 @@ elevation: 20,
           twentyHeightSizedBox,
           // post Container
           Container(
-            height: Get.height*.3,
+            height: Get.height*.25,
             decoration: const BoxDecoration(
                 color: ColorConstants.whiteColor
             ),
@@ -86,7 +92,7 @@ elevation: 20,
               child: Column(
                 children: [
                   Container(
-                    height:Get.height*.15,
+                    height:Get.height*.13,
                     decoration: BoxDecoration(
                         color: ColorConstants.veryLightGreyColor,
                         borderRadius: AppBorders.tenBorderRadius
@@ -100,7 +106,7 @@ elevation: 20,
                           CircleAvatar(
                             backgroundImage: AssetImage(ConstantImages.sea),
                           ),
-                          tenWidthSizedBox,
+                          tenHeightSizedBox,
                           Expanded(
                             child: PostTextField(
                               hintStyle:ConstantTextStyles.hintLightGrayTextStyle,
@@ -126,11 +132,11 @@ elevation: 20,
                         Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              SvgPicture.asset(ConstantIcons.alarm,color: ColorConstants.mediumGreyColor,),
+                              SvgPicture.asset(ConstantIcons.galleryGrey,),
                               fiveWidthSizedBox,
-                              SvgPicture.asset(ConstantIcons.alarm,color: ColorConstants.mediumGreyColor,),
+                              SvgPicture.asset(ConstantIcons.videoCamGrey,),
                               fiveWidthSizedBox,
-                              SvgPicture.asset(ConstantIcons.alarm,color: ColorConstants.mediumGreyColor,),
+                              SvgPicture.asset(ConstantIcons.locationGrey,),
                             ]
                         ),
 
@@ -158,7 +164,7 @@ elevation: 20,
                  margin: EdgeInsetsDirectional.only(start: AppPadding.tenPadding),
                  child: ListView.builder(
                    scrollDirection: Axis.horizontal,
-                   itemCount: 8,
+                   itemCount: categories.length,
                      itemBuilder: (context,index)=>Container(
                        margin: EdgeInsets.symmetric(horizontal: AppPadding.fivePadding),
                        decoration: BoxDecoration(
@@ -170,11 +176,17 @@ elevation: 20,
                        width: 150,
                        child: Row(
                          children: [
-                           Expanded(child: SvgPicture.asset(ConstantIcons.alarm,color: ColorConstants.greenColor,height: 50,)),
                            fiveWidthSizedBox,
                            Expanded(
-                             flex: 2,
-                             child: Text('Religious Activities',
+                             flex:2,
+                               child: SvgPicture.asset('${categories[index].values.single}'
+                             ,color: ColorConstants.greenColor,height: 50,)),
+                           fiveWidthSizedBox,
+                           Expanded(
+                             flex: 5,
+                             child: Text('${categories[index].keys.single}',
+                             maxLines: 2,
+                             overflow: TextOverflow.ellipsis,
                              style: ConstantTextStyles.mediumSixteenDefaultTextStyle,
                              ),
                            )
@@ -324,8 +336,9 @@ elevation: 20,
                                Container(
                                  child: Row(
                                    children: [
-                                     Icon(Icons.favorite_border_outlined,color: ColorConstants.mediumGreyColor,),
-                                     Icon(Icons.favorite_border_outlined,color: ColorConstants.mediumGreyColor),
+                                    SvgPicture.asset(ConstantIcons.likeBlack),
+                                     fifteenWidthSizedBox,
+                                    SvgPicture.asset(ConstantIcons.commentBlack),
                                    ],
                                  ),
                                ),

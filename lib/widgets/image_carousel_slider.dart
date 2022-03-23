@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tourism1/themes/app_sizes.dart';
 import 'package:tourism1/themes/styles.dart';
-import 'package:tourism1/widgets/sized_box.dart';
 
 import '../utils/paths/images_path.dart';
+import 'common widgets/sized_box.dart';
 class CarouselWithIndicatorDemo extends StatefulWidget {
 
   @override
@@ -27,12 +27,12 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
       children: [
         Container(
             width: Get.width,
-            height: Get.height*3,
+            height: Get.height*.25,
             child: Image(image:AssetImage(ConstantImages.mosque),fit: BoxFit.cover,)),
         Positioned(
           bottom: 0,
           child: Container(
-            height: Get.height*.15,
+            height: Get.height*.12,
             width: Get.width,
             decoration: BoxDecoration(
                 color: Colors.black.withOpacity(.5)
@@ -57,12 +57,12 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
       children: [
         Container(
             width: Get.width,
-            height: Get.height*3,
+            height: Get.height*.25,
             child: Image(image:AssetImage(ConstantImages.nature),fit: BoxFit.cover,)),
         Positioned(
           bottom: 0,
           child: Container(
-            height: Get.height*.15,
+            height: Get.height*.12,
             width: Get.width,
             decoration: BoxDecoration(
                 color: Colors.black.withOpacity(.5)
@@ -98,7 +98,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
          carouselController: _controller,
          options: CarouselOptions(
            initialPage: 0,
-             height: Get.height*.3,
+             height: Get.height*.25,
              viewportFraction: 1.0 ,
              autoPlay: true,
              enlargeCenterPage: false,

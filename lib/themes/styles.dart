@@ -1,15 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:tourism1/themes/colors.dart';
 
-<<<<<<< HEAD
 const FontWeight regularFontWeight = FontWeight.w400;
 const FontWeight mediumFontWeight = FontWeight.w500;
 const FontWeight semiBoldFontWeight = FontWeight.w600;
 const FontWeight normalFontWeight = FontWeight.normal;
 const FontWeight boldFontWeight = FontWeight.bold;
-=======
 // TODO Font Weights
->>>>>>> master
 
 class ConstantTextStyles {
   ConstantTextStyles._();
@@ -44,7 +41,6 @@ class ConstantTextStyles {
     fontFamily: FontFamily.poppinsRegular,
     fontSize: 16,
   );
-<<<<<<< HEAD
   static const TextStyle regularSixteenDefaultTextStyle = TextStyle(
     color: ColorConstants.blackColor,
     fontWeight: regularFontWeight,
@@ -60,11 +56,8 @@ class ConstantTextStyles {
     fontWeight: boldFontWeight,
     fontSize: 16,
   );
-=======
 
   ///  TODO SemiBold Black text styles
-
->>>>>>> master
   static const TextStyle semiBoldEighteenPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
     fontFamily: FontFamily.poppinsSemiBold,
