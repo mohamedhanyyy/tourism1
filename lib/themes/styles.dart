@@ -5,6 +5,7 @@ const FontWeight regularFontWeight = FontWeight.w400;
 const FontWeight mediumFontWeight = FontWeight.w500;
 const FontWeight semiBoldFontWeight = FontWeight.w600;
 const FontWeight normalFontWeight = FontWeight.normal;
+const FontWeight boldFontWeight = FontWeight.bold;
 
 class ConstantTextStyles {
   // TODO headline text style
@@ -38,6 +39,21 @@ class ConstantTextStyles {
     fontFamily: 'Poppins',
     fontSize: 16,
   );
+  static const TextStyle regularSixteenDefaultTextStyle = TextStyle(
+    color: ColorConstants.blackColor,
+    fontWeight: regularFontWeight,
+    fontSize: 16,
+  );
+  static const TextStyle mediumSixteenDefaultTextStyle = TextStyle(
+    color: ColorConstants.blackColor,
+    fontWeight: mediumFontWeight,
+    fontSize: 16,
+  );
+  static const TextStyle boldSixteenDefaultTextStyle = TextStyle(
+    color: ColorConstants.blackColor,
+    fontWeight: boldFontWeight,
+    fontSize: 16,
+  );
   static const TextStyle semiBoldEighteenPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,
     fontWeight: semiBoldFontWeight,
@@ -62,6 +78,12 @@ class ConstantTextStyles {
     color: ColorConstants.greenColor,
     fontWeight: semiBoldFontWeight,
     fontFamily: 'Poppins',
+    fontSize: 14,
+  );
+  static const TextStyle semiBoldFourteenGreenDefaultTextStyle = TextStyle(
+    color: ColorConstants.greenColor,
+    fontWeight: semiBoldFontWeight,
+
     fontSize: 14,
   );
   // this hint style is mostly used with textForm Fields

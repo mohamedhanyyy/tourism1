@@ -12,6 +12,7 @@ SizedBox fourtyHeightSizedBox = const SizedBox(height: 40);
 
 SizedBox fiveWidthSizedBox = const SizedBox(width: 5);
 SizedBox tenWidthSizedBox = const SizedBox(width: 10);
+SizedBox fifteenWidthSizedBox = const SizedBox(width: 15);
 SizedBox twentyWidthSizedBox = const SizedBox(width: 20);
 SizedBox thirtyWidthSizedBox = const SizedBox(width: 30);
 SizedBox fourtyWidthSizedBox = const SizedBox(width: 40);
