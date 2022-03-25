@@ -9,11 +9,16 @@ import 'package:tourism1/presentation/favourite_posts/favourite_post_binding/fav
 import 'package:tourism1/presentation/favourite_posts/favourite_post_view/favourite_post_view.dart';
 import 'package:tourism1/presentation/home/binding/home_binding.dart';
 import 'package:tourism1/presentation/home/view/home_view.dart';
+import 'package:tourism1/presentation/map/map_binding/map_binding.dart';
+import 'package:tourism1/presentation/map/map_view/map_view.dart';
 import 'package:tourism1/presentation/tourism_favourite/binding/tourism_favourite_binding.dart';
 import 'package:tourism1/presentation/tourism_favourite/view/tourism_favourite_view.dart';
 import 'package:tourism1/presentation/tourism_feed/binding/tourism_feed_binding.dart';
 import 'package:tourism1/presentation/tourism_feed/view/tourism_feed_view.dart';
 import 'package:tourism1/routes/routes.dart';
+
+import '../presentation/destination details/binding/destination_details_binding.dart';
+import '../presentation/destination details/view/destination_details_view.dart';
 
 abstract class Pages {
   static final routes = [
@@ -33,11 +38,15 @@ abstract class Pages {
       binding: FarmsAndFactoriesBinding(),
     ),
 
-    // GetPage(
-    //   name: Routes.destinationDetails,
-    //   page: () => DestinationDetailsView(),
-    //   binding: DestinationDetailsBinding(),
-    // ),
+    GetPage(
+      name: Routes.destinationDetails,
+      page: () => DestinationDetailsView(),
+      binding: DestinationDetailsBinding(),
+    ),  GetPage(
+      name: Routes.map,
+      page: () => MapView(),
+      binding: MapBinding(),
+    ),
     GetPage(
       name: Routes.tourismFeed,
       page: () => TourismFeedView(),

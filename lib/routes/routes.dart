@@ -6,4 +6,5 @@ abstract class Routes {
   static const String tourismFeed = '/tourismFeed';
   static const String tourismFavourite = '/tourismFavourite';
   static const String favouritePost = '/favouritePost';
+  static const String map = '/map';
 }

@@ -20,10 +20,10 @@ class PostTextField extends StatelessWidget{
       decoration: InputDecoration(
         hintText: hintText,
         suffixIcon: suffixIcon,
-        prefixIcon: prefixIcon,
-        fillColor: fillColor,
+         fillColor: fillColor,
         filled: true,
         labelText: labelText,
+        prefix: prefixIcon,
         hintStyle: hintStyle,
         border: border?OutlineInputBorder(
           borderRadius: BorderRadius.all(

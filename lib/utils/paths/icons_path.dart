@@ -14,4 +14,5 @@ abstract class ConstantIcons {
   static const String likeBlack = '$base/Icon ionic-md-heart.svg';
   static const String likeGreen = '$base/Icon ionic-md-heart_green.svg';
   static const String ratingGreen = '$base/ratingGroup 47218.svg';
+  static const String temp = '$base/temp.svg';
 }

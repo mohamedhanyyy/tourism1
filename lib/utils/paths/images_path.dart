@@ -20,4 +20,5 @@ abstract class ConstantImages {
   static const String nature1 = '$base/fom.png';
   static const String mountain = '$base/Group 47215.png';
   static const String profile = '$base/Dark Violet.png';
+  static const String container = '$base/Container.png';
 }
