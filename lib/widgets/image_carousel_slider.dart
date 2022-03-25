@@ -5,7 +5,6 @@ import 'package:tourism1/presentation/tourism_feed/controller/tourism_feed_contr
 import 'package:tourism1/themes/app_sizes.dart';
 import 'package:tourism1/themes/styles.dart';
 
-import '../utils/paths/images_path.dart';
 import 'common widgets/sized_box.dart';
 class CarouselWithIndicatorDemo extends StatefulWidget {
 
@@ -14,7 +13,7 @@ class CarouselWithIndicatorDemo extends StatefulWidget {
     return _CarouselWithIndicatorState();
   }
 
-  CarouselWithIndicatorDemo();
+  CarouselWithIndicatorDemo({Key? key}) : super(key: key);
 }
 
 class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
@@ -112,7 +111,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                 child: Container(
                   width: 12.0,
                   height: 12.0,
-                  margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                  margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: (Theme.of(context).brightness == Brightness.dark

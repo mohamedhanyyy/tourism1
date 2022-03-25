@@ -10,6 +10,7 @@ import '../utils/paths/icons_path.dart';
 import 'common widgets/sized_box.dart';
 
 class PostWidget extends StatefulWidget {
+
   @override
   _PostWidgetState createState() => _PostWidgetState();
   final String dummyLocation;
@@ -36,9 +37,9 @@ class _PostWidgetState extends State<PostWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(vertical: AppPadding.fifteenPadding),
+      padding:  const EdgeInsets.symmetric(vertical: AppPadding.fifteenPadding),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: ColorConstants.whiteColor
         ),
         child: Column(
@@ -47,7 +48,7 @@ class _PostWidgetState extends State<PostWidget> {
           children: [
             // image of the user & Type & name & uploading time
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+              margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
               child: Row(
                 children: [
                   CircleAvatar(backgroundImage: AssetImage(widget.dummyUserImage),),
@@ -60,7 +61,7 @@ class _PostWidgetState extends State<PostWidget> {
 
                           text: TextSpan(text: '${widget.dummyUserName} ',
                               style: ConstantTextStyles.boldSixteenDefaultTextStyle,
-                              children: [
+                              children: const [
                                 TextSpan(text: 'Uploaded ',
                                     style: ConstantTextStyles.hintLightGrayTextStyle
                                 ),
@@ -77,7 +78,7 @@ class _PostWidgetState extends State<PostWidget> {
                           overflow: TextOverflow.ellipsis,
                         ),
                         fiveHeightSizedBox,
-                        Text('Tour Guide . 2 minutes ago',
+                        const Text('Tour Guide . 2 minutes ago',
                           style: ConstantTextStyles.hintLightGrayTextStyle,
                         )
                       ],
@@ -105,19 +106,19 @@ class _PostWidgetState extends State<PostWidget> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    child: Row(
+
+                   Row(
                       children: [
                         SvgPicture.asset(ConstantIcons.likeGreen,color: ColorConstants.greenColor),
                         fifteenWidthSizedBox,
                         SvgPicture.asset(ConstantIcons.commentBlack),
                       ],
                     ),
-                  ),
-                  Container(
-                    child: Icon(Icons.share_outlined,color: ColorConstants.mediumGreyColor),
 
-                  ),
+
+                     const Icon(Icons.share_outlined,color: ColorConstants.mediumGreyColor),
+
+
 
 
                 ],
@@ -125,8 +126,8 @@ class _PostWidgetState extends State<PostWidget> {
             ),
             fifteenHeightSizedBox,
             // Likes Number
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),
+            const Padding(
+              padding:  EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),
               child: Text('233 Likes',
                 style: ConstantTextStyles.regularFourteenDefaultTextStyle,
               ),
@@ -167,8 +168,8 @@ class _PostWidgetState extends State<PostWidget> {
             ),
             twentyHeightSizedBox,
             // Name of the place
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),
+            const Padding(
+              padding:  EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),
               child: Text('Sahara Desert',
                 style: ConstantTextStyles.boldTwelvePoppinsTextStyle,
               ),
@@ -187,8 +188,8 @@ class _PostWidgetState extends State<PostWidget> {
             ),
             tenHeightSizedBox,
             // Time of the description
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),
+            const   Padding(
+              padding:  EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),
               child: Text('1h ago',
                 style: ConstantTextStyles.hintLightGrayTextStyle,
               ),
@@ -199,10 +200,10 @@ class _PostWidgetState extends State<PostWidget> {
               padding: const EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),                           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Comments',
+                const  Text('Comments',
                   style: ConstantTextStyles.semiBoldSixteenDefaultTextStyle,
                 ),
-                Text('view all 60 comments',
+                  Text('view all 60 comments',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style:ConstantTextStyles.semiBoldSixteenGreenDefaultTextStyle.copyWith(
@@ -215,7 +216,7 @@ class _PostWidgetState extends State<PostWidget> {
             tenHeightSizedBox,
             //comments with user name and image
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+              margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -250,8 +251,8 @@ class _PostWidgetState extends State<PostWidget> {
                     ],
                   ),
                   fiveHeightSizedBox,
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(start: 45),
+                  const Padding(
+                    padding:  EdgeInsetsDirectional.only(start: 45),
                     child: Text('1h ago',
                       style: ConstantTextStyles.hintLightGrayTextStyle,
 
@@ -262,7 +263,7 @@ class _PostWidgetState extends State<PostWidget> {
             ),
             tenHeightSizedBox,
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+              margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -297,8 +298,8 @@ class _PostWidgetState extends State<PostWidget> {
                     ],
                   ),
                   fiveHeightSizedBox,
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(start: 45),
+                  const Padding(
+                    padding:  EdgeInsetsDirectional.only(start: 45),
                     child: Text('1h ago',
                       style: ConstantTextStyles.hintLightGrayTextStyle,
 
@@ -324,7 +325,7 @@ class _PostWidgetState extends State<PostWidget> {
                   )
                 ],
               )
-            ):SizedBox()
+            ): const SizedBox()
           ],
         ),
       ),

@@ -6,28 +6,27 @@ import 'package:tourism1/widgets/post_widget.dart';
 
 import '../../../themes/styles.dart';
 
-class FavouritePostView extends StatefulWidget {
-  @override
-  _FavouritePostViewState createState() => _FavouritePostViewState();
-}
 
-class _FavouritePostViewState extends State<FavouritePostView> {
+
+class FavouritePostView extends GetView<FavouritePostController> {
+  FavouritePostView({Key? key}) : super(key: key);
+
   final favPostController=Get.find<FavouritePostController>();
-  TextEditingController commentTextController=TextEditingController();
+  final TextEditingController commentTextController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:  AppBar(
         leading: IconButton(onPressed: (){
           Get.back();
-        }, icon: Icon(Icons.arrow_back,color: ColorConstants.blackColor,)),
-        title: Text('Favourite',
+        }, icon: const Icon(Icons.arrow_back,color: ColorConstants.blackColor,)),
+        title: const Text('Favourite',
           style: ConstantTextStyles.mediumHeadlineBlackPoppinsTextStyle,
         ),
         actions: [
           IconButton(onPressed: (){
            // Get.toNamed(Routes.tourismFavourite);
-          }, icon: Icon(Icons.notifications,color: ColorConstants.greenColor,))
+          }, icon: const Icon(Icons.notifications,color: ColorConstants.greenColor,))
         ],
       ),
       //Post with comment

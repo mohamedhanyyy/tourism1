@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../themes/colors.dart';
 
 class PostTextField extends StatelessWidget{
+
   TextEditingController? controller;
   Icon? prefixIcon;
   Icon? suffixIcon;
@@ -44,6 +44,7 @@ class PostTextField extends StatelessWidget{
         this.radius,
         this.hintStyle,
        required this.border,
+
       });
 }
 

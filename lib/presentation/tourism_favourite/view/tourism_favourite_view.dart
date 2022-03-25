@@ -1,29 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:tourism1/presentation/tourism_feed/controller/tourism_feed_controller.dart';
 import 'package:tourism1/themes/app_sizes.dart';
 import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/images_path.dart';
-import 'package:tourism1/widgets/post_widget.dart';
 import '../../../routes/routes.dart';
-import '../../../utils/paths/icons_path.dart';
 import '../../../widgets/common widgets/sized_box.dart';
-import '../../../widgets/image_carousel_slider.dart';
-import '../../../widgets/post_text_field.dart';
 import '../controller/tourism_favourite_controller.dart';
 
-class TourismFavouriteView extends StatefulWidget {
-  @override
-  _TourismFavouriteViewState createState() => _TourismFavouriteViewState();
-}
 
-class _TourismFavouriteViewState extends State<TourismFavouriteView> {
+class TourismFavouriteView extends GetView<TourismFavouriteController> {
   final controllerFavourite = Get.find<TourismFavouriteController>();
 
-
-
+  TourismFavouriteView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +20,7 @@ class _TourismFavouriteViewState extends State<TourismFavouriteView> {
       backgroundColor: ColorConstants.whiteColor,
       appBar: AppBar(
         centerTitle: false,
-        title: Text('Favourite',
+        title: const Text('Favourite',
           textAlign: TextAlign.start,
           style: ConstantTextStyles.mediumHeadlineBlackPoppinsTextStyle,
         ),
@@ -39,7 +28,7 @@ class _TourismFavouriteViewState extends State<TourismFavouriteView> {
         actions: [
           IconButton(onPressed: (){
            // Get.toNamed(Routes.tourismFavourite);
-          }, icon: Icon(Icons.notifications,color: ColorConstants.greenColor,))
+          }, icon: const Icon(Icons.notifications,color: ColorConstants.greenColor,))
         ],
       ),
       body: Padding(
@@ -84,7 +73,7 @@ Widget favouriteContainer(){
                     Colors.black.withOpacity(.4),
                     Colors.black.withOpacity(.3),
                   ]),
-                image: DecorationImage(
+                image: const DecorationImage(
           image: AssetImage(ConstantImages.farm),fit: BoxFit.cover,)
             ),
           ),
@@ -114,7 +103,7 @@ Widget favouriteContainer(){
             child: Container(
                 height: Get.height*.12,
                 width: Get.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.transparent
                 ),
                 child: Column(
@@ -134,7 +123,7 @@ Widget favouriteContainer(){
                             children: [
                               Text(controllerFavourite.dummyUserName,style: ConstantTextStyles.headlineWhiteTextStyle,),
                               tenHeightSizedBox,
-                              Text('Pyramids',style: ConstantTextStyles.regularTwelveWhitePoppinsTextStyle,),
+                              const Text('Pyramids',style: ConstantTextStyles.regularTwelveWhitePoppinsTextStyle,),
                             ],
                           )
                         ],

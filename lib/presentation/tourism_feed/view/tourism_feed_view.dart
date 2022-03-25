@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:tourism1/presentation/tourism_favourite/view/tourism_favourite_view.dart';
 import 'package:tourism1/presentation/tourism_feed/controller/tourism_feed_controller.dart';
 import 'package:tourism1/themes/app_sizes.dart';
 import 'package:tourism1/themes/colors.dart';
@@ -14,41 +13,36 @@ import '../../../widgets/common widgets/sized_box.dart';
 import '../../../widgets/image_carousel_slider.dart';
 import '../../../widgets/post_text_field.dart';
 
-class TourismFeedView extends StatefulWidget {
+
+class TourismFeedView extends GetView<TourismFeedController> {
   @override
-  _TourismFeedViewState createState() => _TourismFeedViewState();
-}
-
-class _TourismFeedViewState extends State<TourismFeedView> {
   final controller = Get.find<TourismFeedController>();
-
-
-
+  TourismFeedView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Container(
-        margin: EdgeInsets.all(5),
-        decoration: BoxDecoration(
+        margin: const EdgeInsets.all(5),
+        decoration: const BoxDecoration(
           color: ColorConstants.lightGreyColor,
           shape: BoxShape.circle
         ),
         child: Container(
-          margin:  EdgeInsets.only(bottom: 15,left: 5,right: 5),
-         decoration: BoxDecoration(
+          margin:  const EdgeInsets.only(bottom: 15,left: 5,right: 5),
+         decoration: const BoxDecoration(
 
            color: Colors.white,
            shape: BoxShape.circle
          ),
-          child: Padding(padding: EdgeInsets.all(15),
+          child: Padding(padding: const EdgeInsets.all(15),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: ColorConstants.greyColor,
               shape: BoxShape.circle
             ),
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
           ),
         ),
@@ -56,13 +50,13 @@ class _TourismFeedViewState extends State<TourismFeedView> {
 
       backgroundColor: ColorConstants.veryLightGreyColor,
       appBar: AppBar(
-        title: Text('Tourism Feed',
+        title: const Text('Tourism Feed',
         style: ConstantTextStyles.mediumHeadlineBlackPoppinsTextStyle,
         ),
         actions: [
           IconButton(onPressed: (){
             Get.toNamed(Routes.tourismFavourite);
-          }, icon: Icon(Icons.notifications,color: ColorConstants.greenColor,))
+          }, icon: const Icon(Icons.notifications,color: ColorConstants.greenColor,))
         ],
       ),
       body: ListView(
@@ -75,13 +69,13 @@ class _TourismFeedViewState extends State<TourismFeedView> {
                 color: ColorConstants.whiteColor
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: AppPadding.fifteenPadding,horizontal:  AppPadding.fifteenPadding),
+              padding: const EdgeInsets.symmetric(vertical: AppPadding.fifteenPadding,horizontal:  AppPadding.fifteenPadding),
               child: Column(
                 children: [
                   // post text field
                   Container(
                     height:Get.height*.1,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: ColorConstants.veryLightGreyColor,
                         borderRadius: AppBorders.tenBorderRadius
                     ),
@@ -92,7 +86,7 @@ class _TourismFeedViewState extends State<TourismFeedView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          CircleAvatar(
+                          const CircleAvatar(
                             backgroundImage: AssetImage(ConstantImages.sea),
                           ),
                           tenHeightSizedBox,
@@ -112,7 +106,7 @@ class _TourismFeedViewState extends State<TourismFeedView> {
                   ),
 
                   tenHeightSizedBox,
-                  Divider(color: ColorConstants.lightGreyColor,),
+                  const Divider(color: ColorConstants.lightGreyColor,),
                   tenHeightSizedBox,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween ,
@@ -130,7 +124,7 @@ class _TourismFeedViewState extends State<TourismFeedView> {
                           ]
                       ),
 
-                      ElevatedButton(onPressed: (){}, child: Text('Post Details')),
+                      ElevatedButton(onPressed: (){}, child: const Text('Post Details')),
                     ],
                   )
                 ],
@@ -145,13 +139,13 @@ class _TourismFeedViewState extends State<TourismFeedView> {
           // categories list
           Container(
             height: Get.height*.08,
-            margin: EdgeInsetsDirectional.only(start: AppPadding.tenPadding),
+            margin: const EdgeInsetsDirectional.only(start: AppPadding.tenPadding),
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: controller.categories.length,
                 itemBuilder: (context,index)=>Container(
-                  margin: EdgeInsets.symmetric(horizontal: AppPadding.fivePadding),
-                  decoration: BoxDecoration(
+                  margin: const EdgeInsets.symmetric(horizontal: AppPadding.fivePadding),
+                  decoration: const BoxDecoration(
                     borderRadius: AppBorders.tenBorderRadius,
                     color: Colors.white,
                   ),
@@ -163,12 +157,12 @@ class _TourismFeedViewState extends State<TourismFeedView> {
                       fiveWidthSizedBox,
                       Expanded(
                         flex:2,
-                          child: SvgPicture.asset('${controller.categories[index].values.single}'
+                          child: SvgPicture.asset(controller.categories[index].values.single
                         ,color: ColorConstants.greenColor,height: 50,)),
                       fiveWidthSizedBox,
                       Expanded(
                         flex: 5,
-                        child: Text('${controller.categories[index].keys.single}',
+                        child: Text(controller.categories[index].keys.single,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: ConstantTextStyles.mediumSixteenDefaultTextStyle,
@@ -183,11 +177,11 @@ class _TourismFeedViewState extends State<TourismFeedView> {
           // city filter
           Container(
             height: Get.height*.08,
-            margin: EdgeInsetsDirectional.only(start: AppPadding.fifteenPadding,end:AppPadding.fifteenPadding ),
+            margin: const EdgeInsetsDirectional.only(start: AppPadding.fifteenPadding,end:AppPadding.fifteenPadding ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Post Filter',
+                const Text('Post Filter',
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 style: ConstantTextStyles.mediumSixteenDefaultTextStyle,
@@ -197,15 +191,15 @@ class _TourismFeedViewState extends State<TourismFeedView> {
                   child: Container(
                     height: Get.height*.07,
                     //width: Get.width,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: ColorConstants.whiteColor,
                       borderRadius: AppBorders.tenBorderRadius,
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.only(start: AppPadding.fivePadding),
+                        const Padding(
+                          padding:  EdgeInsetsDirectional.only(start: AppPadding.fivePadding),
                           child: Text('City: ',
                             style: ConstantTextStyles.mediumSixteenDefaultTextStyle,
                           ),
@@ -214,17 +208,17 @@ class _TourismFeedViewState extends State<TourismFeedView> {
                     Expanded(
                       child: Container(
                         height: Get.height*.04,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: ColorConstants.lightGreyColor,
                           borderRadius: AppBorders.tenBorderRadius,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.min,
-                          children: [
+                          children: const [
 
-                            Padding(
-                              padding: const EdgeInsetsDirectional.only(start: AppPadding.fivePadding),
+                             Padding(
+                              padding:  EdgeInsetsDirectional.only(start: AppPadding.fivePadding),
                               child: Text('Dubai',
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
@@ -232,7 +226,7 @@ class _TourismFeedViewState extends State<TourismFeedView> {
                               ),
                             ),
                             //IconButton(onPressed: (){}, icon: Icon(Icons.arrow_drop_down_outlined)),
-                            Icon(Icons.arrow_drop_down_outlined)
+                              Icon(Icons.arrow_drop_down_outlined)
                           ],
                         ),
                       ),
@@ -248,7 +242,7 @@ class _TourismFeedViewState extends State<TourismFeedView> {
           twentyHeightSizedBox,
           // List of Posts
           ListView.builder(
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemCount: 2,
               itemBuilder: (context,index)=>
