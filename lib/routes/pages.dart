@@ -3,14 +3,22 @@ import 'package:tourism1/presentation/destination%20details/binding/destination_
 import 'package:tourism1/presentation/destination%20details/view/destination_details_view.dart';
 import 'package:tourism1/presentation/destination/binding/destination_binding.dart';
 import 'package:tourism1/presentation/destination/view/destination_view.dart';
-import 'package:tourism1/presentation/farms%20&%20factories/binding/farms_and_factories_binding.dart';
-import 'package:tourism1/presentation/farms%20&%20factories/view/farms_and_factories_view.dart';
+import 'package:tourism1/presentation/farms_and_factories/binding/farms_and_factories_binding.dart';
+import 'package:tourism1/presentation/farms_and_factories/view/farms_and_factories_view.dart';
 import 'package:tourism1/presentation/home/binding/home_binding.dart';
 import 'package:tourism1/presentation/home/view/home_view.dart';
+import 'package:tourism1/presentation/layout_page/binding/layout_binding.dart';
 import 'package:tourism1/routes/routes.dart';
+import 'package:tourism1/presentation/layout_page/view/layout_page.dart';
 
 abstract class Pages {
   static final routes = [
+    GetPage(
+      name: Routes.startLayout,
+      page: () =>  const LayoutPage(),
+      binding: LayoutBinding()
+    ),
+
     GetPage(
       name: Routes.home,
       page: () => const HomeView(),

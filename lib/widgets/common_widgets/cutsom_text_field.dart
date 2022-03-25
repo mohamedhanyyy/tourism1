@@ -43,5 +43,40 @@ class CustomTextField extends StatelessWidget {
     this.hintText,
     this.radius,
     this.suffix,
+
   });
+}
+
+class FormFieldsWidgets{
+  static Widget normalTextField({
+  required String hint ,
+  required TextEditingController controller,
+  int maxLines = 1
+}){
+    return Container(
+   
+      child: TextFormField(
+        controller: controller,
+        maxLines: maxLines,
+        decoration: InputDecoration(
+          fillColor: ColorConstants.whiteColor,
+          filled: true,
+          hintText: hint,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.0),
+            borderSide: BorderSide(color: ColorConstants.whiteColor),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.0),
+            borderSide: BorderSide(color: ColorConstants.whiteColor),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.0),
+            borderSide: BorderSide(color: ColorConstants.whiteColor),
+          ),
+        ),
+      ),
+    );
+  }
+
 }

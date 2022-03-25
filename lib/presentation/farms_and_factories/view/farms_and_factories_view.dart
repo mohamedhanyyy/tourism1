@@ -9,7 +9,6 @@ import 'package:tourism1/widgets/common%20widgets/sized_box.dart';
 
 import '../../../routes/routes.dart';
 import '../../../themes/app_sizes.dart';
-import '../../../widgets/common widgets/leading_appBar.dart';
 import '../controller/farms_and_factories_controller.dart';
 
 class FarmsAndFactoriesView extends GetView<FarmsAndFactoriesController> {
