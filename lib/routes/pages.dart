@@ -5,8 +5,12 @@ import 'package:tourism1/presentation/destination/binding/destination_binding.da
 import 'package:tourism1/presentation/destination/view/destination_view.dart';
 import 'package:tourism1/presentation/farms%20&%20factories/binding/farms_and_factories_binding.dart';
 import 'package:tourism1/presentation/farms%20&%20factories/view/farms_and_factories_view.dart';
+import 'package:tourism1/presentation/favourite_posts/favourite_post_binding/favourite_post_binding.dart';
+import 'package:tourism1/presentation/favourite_posts/favourite_post_view/favourite_post_view.dart';
 import 'package:tourism1/presentation/home/binding/home_binding.dart';
 import 'package:tourism1/presentation/home/view/home_view.dart';
+import 'package:tourism1/presentation/tourism_favourite/binding/tourism_favourite_binding.dart';
+import 'package:tourism1/presentation/tourism_favourite/view/tourism_favourite_view.dart';
 import 'package:tourism1/presentation/tourism_feed/binding/tourism_feed_binding.dart';
 import 'package:tourism1/presentation/tourism_feed/view/tourism_feed_view.dart';
 import 'package:tourism1/routes/routes.dart';
@@ -38,6 +42,16 @@ abstract class Pages {
       name: Routes.tourismFeed,
       page: () => TourismFeedView(),
       binding: TourismFeedBinding(),
+    ),
+    GetPage(
+      name: Routes.tourismFavourite,
+      page: () => TourismFavouriteView(),
+      binding: TourismFavouriteBinding(),
+    ),
+    GetPage(
+      name: Routes.favouritePost,
+      page: () => FavouritePostView(),
+      binding: FavouritePostBinding(),
     ),
   ];
 }

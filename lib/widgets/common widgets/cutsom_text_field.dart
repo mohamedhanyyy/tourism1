@@ -45,3 +45,41 @@ class CustomTextField extends StatelessWidget {
     this.suffix,
   });
 }
+class CustomCommentTextField extends StatelessWidget {
+  TextEditingController? controller;
+  Icon? prefixIcon;
+  Icon? suffixIcon;
+  Icon? suffix;
+  Color? fillColor = ColorConstants.whiteColor;
+  String? labelText;
+
+  String? hintText;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: controller,
+      decoration: InputDecoration(
+        hintText: hintText,
+        suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
+        fillColor: fillColor,
+        suffix: suffix,
+        filled: true,
+        labelText: labelText,
+        border: InputBorder.none
+      ),
+    );
+  }
+
+  CustomCommentTextField({
+    this.controller,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.fillColor,
+    this.labelText,
+    this.hintText,
+    this.suffix,
+  });
+}

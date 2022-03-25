@@ -4,4 +4,6 @@ abstract class Routes {
   static const String farmsAndFactories = '/farmsAndFactories';
   static const String destinationDetails = '/destinationDetails';
   static const String tourismFeed = '/tourismFeed';
+  static const String tourismFavourite = '/tourismFavourite';
+  static const String favouritePost = '/favouritePost';
 }
