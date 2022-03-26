@@ -7,7 +7,6 @@ import 'package:tourism1/utils/paths/images_path.dart';
 import 'package:tourism1/widgets/common%20widgets/sized_box.dart';
 
 import '../../../themes/colors.dart';
-import '../../../widgets/common widgets/leading_appBar.dart';
 
 class DestinationDetailsView extends GetView<DestinationDetailsController> {
   DestinationDetailsView({Key? key}) : super(key: key);

@@ -43,43 +43,40 @@ class CustomTextField extends StatelessWidget {
     this.hintText,
     this.radius,
     this.suffix,
+
   });
 }
-class CustomCommentTextField extends StatelessWidget {
-  TextEditingController? controller;
-  Icon? prefixIcon;
-  Icon? suffixIcon;
-  Icon? suffix;
-  Color? fillColor = ColorConstants.whiteColor;
-  String? labelText;
 
-  String? hintText;
-
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(
-        hintText: hintText,
-        suffixIcon: suffixIcon,
-        prefixIcon: prefixIcon,
-        fillColor: fillColor,
-        suffix: suffix,
-        filled: true,
-        labelText: labelText,
-        border: InputBorder.none
+class FormFieldsWidgets{
+  static Widget normalTextField({
+  required String hint ,
+  required TextEditingController controller,
+  int maxLines = 1
+}){
+    return Container(
+   
+      child: TextFormField(
+        controller: controller,
+        maxLines: maxLines,
+        decoration: InputDecoration(
+          fillColor: ColorConstants.whiteColor,
+          filled: true,
+          hintText: hint,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.0),
+            borderSide: BorderSide(color: ColorConstants.whiteColor),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.0),
+            borderSide: BorderSide(color: ColorConstants.whiteColor),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.0),
+            borderSide: BorderSide(color: ColorConstants.whiteColor),
+          ),
+        ),
       ),
     );
   }
 
-  CustomCommentTextField({
-    this.controller,
-    this.prefixIcon,
-    this.suffixIcon,
-    this.fillColor,
-    this.labelText,
-    this.hintText,
-    this.suffix,
-  });
 }
