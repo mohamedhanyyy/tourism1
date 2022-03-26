@@ -4,9 +4,10 @@ import 'package:tourism1/presentation/destination%20details/controller/destinati
 import 'package:tourism1/themes/app_sizes.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/images_path.dart';
-import 'package:tourism1/widgets/common%20widgets/sized_box.dart';
 
 import '../../../themes/colors.dart';
+import '../../../widgets/common_widgets/leading_appBar.dart';
+import '../../../widgets/common_widgets/sized_box.dart';
 
 class DestinationDetailsView extends GetView<DestinationDetailsController> {
   DestinationDetailsView({Key? key}) : super(key: key);

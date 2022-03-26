@@ -11,7 +11,7 @@ import '../../../themes/styles.dart';
 class FavouritePostView extends GetView<FavouritePostController> {
   FavouritePostView({Key? key}) : super(key: key);
 
-  final favPostController=Get.find<FavouritePostController>();
+  final favPostController=Get.put(FavouritePostController());
   final TextEditingController commentTextController=TextEditingController();
   @override
   Widget build(BuildContext context) {

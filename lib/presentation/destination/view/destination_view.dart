@@ -7,9 +7,9 @@ import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/icons_path.dart';
 import 'package:tourism1/utils/paths/images_path.dart';
-import 'package:tourism1/widgets/common%20widgets/sized_box.dart';
 
 import '../../../routes/routes.dart';
+import '../../../widgets/common_widgets/sized_box.dart';
 
 class DestinationView extends GetView<DestinationController> {
   const DestinationView({Key? key}) : super(key: key);

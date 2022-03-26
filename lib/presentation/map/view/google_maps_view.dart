@@ -1,8 +1,4 @@
-import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -10,12 +6,12 @@ import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/icons_path.dart';
 import 'package:tourism1/utils/paths/images_path.dart';
-import 'package:tourism1/widgets/common%20widgets/cutsom_text_field.dart';
 
-class MapView extends GetView {
+import '../../../widgets/common_widgets/cutsom_text_field.dart';
+
+class GoogleMapsView extends GetView {
   @override
   TextEditingController controller = TextEditingController();
-  final Completer<GoogleMapController> _controller = Completer();
 
   static const CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
@@ -93,9 +89,9 @@ class MapView extends GetView {
                             height: 133,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
-                              image:  DecorationImage(
+                              image:  const DecorationImage(
                                 fit: BoxFit.fill,
-                                image: AssetImage(ConstantImages.container),
+                                image: AssetImage(ConstantImages.mosque),
                               ),
                             ),
                           ),
@@ -123,7 +119,7 @@ class MapView extends GetView {
                                           .semiBoldFourteenGreenPoppinsTextStyle,
                                     ),
                                     const SizedBox(width: 3),
-                                    SvgPicture.asset(ConstantIcons.temp)
+                                    SvgPicture.asset(ConstantIcons.alarm)
                                   ],
                                 ),
                               ),

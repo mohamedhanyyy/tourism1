@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:tourism1/presentation/layout_page/view/layout_page.dart';
 import 'package:tourism1/routes/pages.dart';
 import 'package:tourism1/routes/routes.dart';
 import 'package:tourism1/themes/themes.dart';

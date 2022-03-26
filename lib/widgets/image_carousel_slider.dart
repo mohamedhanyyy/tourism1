@@ -6,9 +6,9 @@ import 'package:tourism1/presentation/tourism_feed/controller/tourism_feed_contr
 import 'package:tourism1/themes/app_sizes.dart';
 import 'package:tourism1/themes/styles.dart';
 
-import 'common widgets/sized_box.dart';
-class CarouselWithIndicatorDemo extends StatefulWidget {
+import 'common_widgets/sized_box.dart';
 
+class CarouselWithIndicatorDemo extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _CarouselWithIndicatorState();
@@ -18,21 +18,19 @@ class CarouselWithIndicatorDemo extends StatefulWidget {
 }
 
 class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
-
-
   int _current = 0;
   final CarouselController _controller = CarouselController();
-  final controller=Get.find<TourismFeedController>();
+   final controller = Get.put(TourismFeedController());
 
 //adding dummy line and subline with image to the stack widget having theese three items
-  List<Widget> stackPicsItems(){
-    List<Widget>list=[];
-    controller.dummyListDataCarousle.forEach((item)  {
-     list.add(stackOfImage(
-       image: item['image name'],
-     adLine: item['ad line'],
-     adSub: item['ad subline'],
-     ));
+  List<Widget> stackPicsItems() {
+    List<Widget> list = [];
+    controller.dummyListDataCarousle.forEach((item) {
+      list.add(stackOfImage(
+        image: item['image name'],
+        adLine: item['ad line'],
+        adSub: item['ad subline'],
+      ));
     });
     return list;
   }
@@ -44,39 +42,46 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
     required String image,
   }) {
     return Stack(
-    children: [
-      Container(
-          width: Get.width,
-          height: Get.height*.25,
-          child: Image(image:AssetImage(image),fit: BoxFit.cover,)),
-      Positioned(
-        bottom: 0,
-        child: Container(
-          height: Get.height*.12,
-          width: Get.width,
-          decoration: BoxDecoration(
-              color: Colors.black.withOpacity(.5)
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppPadding.twentyPadding,vertical: AppPadding.twentyPadding),
-            child:SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(adLine,style: ConstantTextStyles.headlineWhiteTextStyle,),
-                  tenHeightSizedBox,
-                  Flexible(child: Text(adSub,style: ConstantTextStyles.hintWhiteTextStyle,)),
-
-                ],
-              ),
-            )
-
-          )),
-      )
-    ],
-  );
+      children: [
+        Container(
+            width: Get.width,
+            height: Get.height * .25,
+            child: Image(
+              image: AssetImage(image),
+              fit: BoxFit.cover,
+            )),
+        Positioned(
+          bottom: 0,
+          child: Container(
+              height: Get.height * .12,
+              width: Get.width,
+              decoration: BoxDecoration(color: Colors.black.withOpacity(.5)),
+              child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: AppPadding.twentyPadding,
+                      vertical: AppPadding.twentyPadding),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          adLine,
+                          style: ConstantTextStyles.headlineWhiteTextStyle,
+                        ),
+                        tenHeightSizedBox,
+                        Flexible(
+                            child: Text(
+                          adSub,
+                          style: ConstantTextStyles.hintWhiteTextStyle,
+                        )),
+                      ],
+                    ),
+                  ))),
+        )
+      ],
+    );
   }
 
   @override
@@ -84,25 +89,25 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
     return Stack(
       children: [
         CarouselSlider(
-         items: stackPicsItems(),
-         carouselController: _controller,
-         options: CarouselOptions(
-           initialPage: 0,
-             height: Get.height*.25,
-             viewportFraction: 1.0 ,
-             autoPlay: true,
-             enlargeCenterPage: false,
-             onPageChanged: (index, reason) {
-               setState(() {
-                 _current = index;
-               });
-             }),
-          ),
+          items: stackPicsItems(),
+          carouselController: _controller,
+          options: CarouselOptions(
+              initialPage: 0,
+              height: Get.height * .25,
+              viewportFraction: 1.0,
+              autoPlay: true,
+              enlargeCenterPage: false,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _current = index;
+                });
+              }),
+        ),
         Positioned(
           bottom: 15,
 
           // (12*changingItems.length) is the width of the containers which are the  indicators  according to list length
-          left: Get.width/2-(12*controller.dummyListDataCarousle.length),
+          left: Get.width / 2 - (12 * controller.dummyListDataCarousle.length),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -112,12 +117,13 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                 child: Container(
                   width: 12.0,
                   height: 12.0,
-                  margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 8.0, horizontal: 4.0),
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: (Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white
-                          : Colors.white)
+                              ? Colors.white
+                              : Colors.white)
                           .withOpacity(_current == entry.key ? 0.9 : 0.4)),
                 ),
               );
@@ -126,6 +132,5 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
         ),
       ],
     );
-
   }
 }

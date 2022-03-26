@@ -9,54 +9,32 @@ import 'package:tourism1/utils/paths/images_path.dart';
 import 'package:tourism1/widgets/post_widget.dart';
 import '../../../routes/routes.dart';
 import '../../../utils/paths/icons_path.dart';
-import '../../../widgets/common widgets/sized_box.dart';
+import '../../../widgets/common_widgets/sized_box.dart';
 import '../../../widgets/image_carousel_slider.dart';
 import '../../../widgets/post_text_field.dart';
 
-
 class TourismFeedView extends GetView<TourismFeedController> {
   @override
-  final controller = Get.find<TourismFeedController>();
-  TourismFeedView({Key? key}) : super(key: key);
+  final controller = Get.put(TourismFeedController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Container(
-        margin: const EdgeInsets.all(5),
-        decoration: const BoxDecoration(
-            color: ColorConstants.lightGreyColor,
-            shape: BoxShape.circle
-        ),
-        child: Container(
-          margin:  const EdgeInsets.only(bottom: 15,left: 5,right: 5),
-          decoration: const BoxDecoration(
-
-              color: Colors.white,
-              shape: BoxShape.circle
-          ),
-          child: Padding(padding: const EdgeInsets.all(15),
-            child: Container(
-              decoration: const BoxDecoration(
-                  color: ColorConstants.greyColor,
-                  shape: BoxShape.circle
-              ),
-              child: const Icon(Icons.add),
-            ),
-          ),
-        ),
-      ),
-
       backgroundColor: ColorConstants.veryLightGreyColor,
       appBar: AppBar(
-        title: const Text('Tourism Feed',
+        title: const Text(
+          'Tourism Feed',
           style: ConstantTextStyles.mediumHeadlineBlackPoppinsTextStyle,
         ),
         actions: [
-          IconButton(onPressed: (){
-            Get.toNamed(Routes.tourismFavourite);
-          }, icon: const Icon(Icons.notifications,color: ColorConstants.greenColor,))
+          IconButton(
+              onPressed: () {
+                Get.toNamed(Routes.tourismFavourite);
+              },
+              icon: const Icon(
+                Icons.notifications,
+                color: ColorConstants.greenColor,
+              ))
         ],
       ),
       body: ListView(
@@ -65,39 +43,38 @@ class TourismFeedView extends GetView<TourismFeedController> {
           // post Container
           Container(
             //height: Get.height*.25,
-            decoration: const BoxDecoration(
-                color: ColorConstants.whiteColor
-            ),
+            decoration: const BoxDecoration(color: ColorConstants.whiteColor),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: AppPadding.fifteenPadding,horizontal:  AppPadding.fifteenPadding),
+              padding: const EdgeInsets.symmetric(
+                  vertical: AppPadding.fifteenPadding,
+                  horizontal: AppPadding.fifteenPadding),
               child: Column(
                 children: [
                   // post text field
                   Container(
-                    height:Get.height*.1,
+                    height: Get.height * .1,
                     decoration: const BoxDecoration(
                         color: ColorConstants.veryLightGreyColor,
-                        borderRadius: AppBorders.tenBorderRadius
-                    ),
-
+                        borderRadius: AppBorders.tenBorderRadius),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10.0, vertical: 10.0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           const CircleAvatar(
-                            backgroundImage: AssetImage(ConstantImages.sea),
+                            backgroundImage: AssetImage(ConstantImages.profile),
                           ),
                           tenHeightSizedBox,
                           Expanded(
                             child: PostTextField(
-                              hintStyle:ConstantTextStyles.hintLightGrayTextStyle,
+                              hintStyle:
+                                  ConstantTextStyles.hintLightGrayTextStyle,
                               fillColor: Colors.transparent,
                               border: false,
-                              radius:15.0 ,
+                              radius: 15.0,
                               hintText: 'Enter destination details here ',
-
                             ),
                           ),
                         ],
@@ -106,25 +83,31 @@ class TourismFeedView extends GetView<TourismFeedController> {
                   ),
 
                   tenHeightSizedBox,
-                  const Divider(color: ColorConstants.lightGreyColor,),
+                  const Divider(
+                    color: ColorConstants.lightGreyColor,
+                  ),
                   tenHeightSizedBox,
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween ,
-
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            SvgPicture.asset(ConstantIcons.galleryGrey,),
+                            SvgPicture.asset(
+                              ConstantIcons.galleryGrey,
+                            ),
                             fiveWidthSizedBox,
-                            SvgPicture.asset(ConstantIcons.videoCamGrey,),
+                            SvgPicture.asset(
+                              ConstantIcons.videoCamGrey,
+                            ),
                             fiveWidthSizedBox,
-                            SvgPicture.asset(ConstantIcons.locationGrey,),
-                          ]
-                      ),
-
-                      ElevatedButton(onPressed: (){}, child: const Text('Post Details')),
+                            SvgPicture.asset(
+                              ConstantIcons.locationGrey,
+                            ),
+                          ]),
+                      ElevatedButton(
+                          onPressed: () {}, child: const Text('Post Details')),
                     ],
                   )
                 ],
@@ -138,13 +121,15 @@ class TourismFeedView extends GetView<TourismFeedController> {
           twentyHeightSizedBox,
           // categories list
           Container(
-            height: Get.height*.08,
-            margin: const EdgeInsetsDirectional.only(start: AppPadding.tenPadding),
+            height: Get.height * .08,
+            margin:
+                const EdgeInsetsDirectional.only(start: AppPadding.tenPadding),
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: controller.categories.length,
-              itemBuilder: (context,index)=>Container(
-                margin: const EdgeInsets.symmetric(horizontal: AppPadding.fivePadding),
+              itemBuilder: (context, index) => Container(
+                margin: const EdgeInsets.symmetric(
+                    horizontal: AppPadding.fivePadding),
                 decoration: const BoxDecoration(
                   borderRadius: AppBorders.tenBorderRadius,
                   color: Colors.white,
@@ -156,13 +141,18 @@ class TourismFeedView extends GetView<TourismFeedController> {
                   children: [
                     fiveWidthSizedBox,
                     Expanded(
-                        flex:2,
-                        child: SvgPicture.asset(controller.categories[index].values.single
-                          ,color: ColorConstants.greenColor,height: 50,)),
+                      flex: 2,
+                      child: SvgPicture.asset(
+                        controller.categories[index].values.single,
+                        color: ColorConstants.greenColor,
+                        height: 50,
+                      ),
+                    ),
                     fiveWidthSizedBox,
                     Expanded(
                       flex: 5,
-                      child: Text(controller.categories[index].keys.single,
+                      child: Text(
+                        controller.categories[index].keys.single,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: ConstantTextStyles.mediumSixteenDefaultTextStyle,
@@ -173,15 +163,19 @@ class TourismFeedView extends GetView<TourismFeedController> {
               ),
             ),
           ),
+
           twentyHeightSizedBox,
           // city filter
           Container(
-            height: Get.height*.08,
-            margin: const EdgeInsetsDirectional.only(start: AppPadding.fifteenPadding,end:AppPadding.fifteenPadding ),
+            height: Get.height * .08,
+            margin: const EdgeInsetsDirectional.only(
+                start: AppPadding.fifteenPadding,
+                end: AppPadding.fifteenPadding),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Text('Post Filter',
+                const Text(
+                  'Post Filter',
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
                   style: ConstantTextStyles.mediumSixteenDefaultTextStyle,
@@ -189,7 +183,7 @@ class TourismFeedView extends GetView<TourismFeedController> {
                 tenWidthSizedBox,
                 Expanded(
                   child: Container(
-                    height: Get.height*.07,
+                    height: Get.height * .07,
                     //width: Get.width,
                     decoration: const BoxDecoration(
                       color: ColorConstants.whiteColor,
@@ -199,15 +193,18 @@ class TourismFeedView extends GetView<TourismFeedController> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Padding(
-                          padding:  EdgeInsetsDirectional.only(start: AppPadding.fivePadding),
-                          child: Text('City: ',
-                            style: ConstantTextStyles.mediumSixteenDefaultTextStyle,
+                          padding: EdgeInsetsDirectional.only(
+                              start: AppPadding.fivePadding),
+                          child: Text(
+                            'City: ',
+                            style: ConstantTextStyles
+                                .mediumSixteenDefaultTextStyle,
                           ),
                         ),
                         fiveWidthSizedBox,
                         Expanded(
                           child: Container(
-                            height: Get.height*.04,
+                            height: Get.height * .04,
                             decoration: const BoxDecoration(
                               color: ColorConstants.lightGreyColor,
                               borderRadius: AppBorders.tenBorderRadius,
@@ -216,22 +213,23 @@ class TourismFeedView extends GetView<TourismFeedController> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               mainAxisSize: MainAxisSize.min,
                               children: const [
-
                                 Padding(
-                                  padding:  EdgeInsetsDirectional.only(start: AppPadding.fivePadding),
-                                  child: Text('Dubai',
+                                  padding: EdgeInsetsDirectional.only(
+                                      start: AppPadding.fivePadding),
+                                  child: Text(
+                                    'Dubai',
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
-                                    style: ConstantTextStyles.regularSixteenDefaultTextStyle,
+                                    style: ConstantTextStyles
+                                        .regularSixteenDefaultTextStyle,
                                   ),
                                 ),
-                                //IconButton(onPressed: (){}, icon: Icon(Icons.arrow_drop_down_outlined)),
                                 Icon(Icons.arrow_drop_down_outlined)
                               ],
                             ),
                           ),
                         ),
-                        fifteenWidthSizedBox,
+                        const SizedBox(width: 15),
                       ],
                     ),
                   ),
@@ -245,22 +243,17 @@ class TourismFeedView extends GetView<TourismFeedController> {
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: 2,
-              itemBuilder: (context,index)=>
-              // single post
-              PostWidget(
-
-                  isComment: false,
-                  dummyLocation: controller.dummyLocation,
-                  dummyPostDescription:  controller.dummyPostDescription,
-                  dummyUserName:  controller.dummyUserName,
-                  dummyUserImage:  controller.dummyUserImage,
-                  dummyPostImage:  controller.dummyPostImage)
-
-
-          ),
+              itemBuilder: (context, index) =>
+                  // single post
+                  PostWidget(
+                      isComment: false,
+                      dummyLocation: controller.dummyLocation,
+                      dummyPostDescription: controller.dummyPostDescription,
+                      dummyUserName: controller.dummyUserName,
+                      dummyUserImage: controller.dummyUserImage,
+                      dummyPostImage: controller.dummyPostImage)),
         ],
       ),
     );
   }
-
 }

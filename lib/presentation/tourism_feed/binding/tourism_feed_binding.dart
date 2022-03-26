@@ -4,6 +4,6 @@ import 'package:tourism1/presentation/tourism_feed/controller/tourism_feed_contr
 class TourismFeedBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => TourismFeedController(),fenix: true);
+    Get.lazyPut(() => TourismFeedController());
   }
 }

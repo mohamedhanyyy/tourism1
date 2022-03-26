@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:tourism1/widgets/common%20widgets/cutsom_text_field.dart';
 
 import '../themes/app_sizes.dart';
 import '../themes/colors.dart';
 import '../themes/styles.dart';
 import '../utils/paths/icons_path.dart';
-import 'common widgets/sized_box.dart';
+import 'common_widgets/cutsom_text_field.dart';
+import 'common_widgets/sized_box.dart';
 
 class PostWidget extends StatefulWidget {
   @override
@@ -109,7 +109,9 @@ class _PostWidgetState extends State<PostWidget> {
                     children: [
                       SvgPicture.asset(ConstantIcons.likeGreen,
                           color: ColorConstants.greenColor),
-                      fifteenWidthSizedBox,
+                      SizedBox(
+                        width: 15,
+                      ),
                       SvgPicture.asset(ConstantIcons.commentBlack),
                     ],
                   ),
@@ -161,7 +163,9 @@ class _PostWidgetState extends State<PostWidget> {
                           decoration: TextDecoration.underline,
                         )),
                   ),
-                  fiftyWidthSizedBox,
+                  SizedBox(
+                    width: 5,
+                  ),
                   SvgPicture.asset(ConstantIcons.ratingGreen),
                 ],
               ),

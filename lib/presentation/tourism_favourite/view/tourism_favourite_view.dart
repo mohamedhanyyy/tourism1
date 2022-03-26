@@ -5,7 +5,7 @@ import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/images_path.dart';
 import '../../../routes/routes.dart';
-import '../../../widgets/common widgets/sized_box.dart';
+ import '../../../widgets/common_widgets/sized_box.dart';
 import '../controller/tourism_favourite_controller.dart';
 
 

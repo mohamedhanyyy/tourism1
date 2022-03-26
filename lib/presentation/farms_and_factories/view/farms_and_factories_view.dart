@@ -5,11 +5,12 @@ import 'package:get/get.dart';
 import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/icons_path.dart';
-import 'package:tourism1/widgets/common%20widgets/cutsom_text_field.dart';
-import 'package:tourism1/widgets/common%20widgets/sized_box.dart';
 
 import '../../../routes/routes.dart';
 import '../../../themes/app_sizes.dart';
+import '../../../widgets/common_widgets/cutsom_text_field.dart';
+import '../../../widgets/common_widgets/leading_appBar.dart';
+import '../../../widgets/common_widgets/sized_box.dart';
 import '../controller/farms_and_factories_controller.dart';
 
 class FarmsAndFactoriesView extends GetView<FarmsAndFactoriesController> {
