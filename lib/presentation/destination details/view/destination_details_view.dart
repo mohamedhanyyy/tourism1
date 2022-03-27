@@ -25,7 +25,7 @@ class DestinationDetailsView extends GetView<DestinationDetailsController> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppPadding.tenPadding),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: ListView(
           children: [
             tenHeightSizedBox,
@@ -55,7 +55,7 @@ class DestinationDetailsView extends GetView<DestinationDetailsController> {
                             },
                             child: Padding(
                               padding:
-                                  const EdgeInsets.all(AppPadding.eightPadding),
+                                  const EdgeInsets.all(8),
                               child: Card(
                                 elevation: 0,
                                 child: Column(

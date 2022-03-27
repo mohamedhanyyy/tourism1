@@ -3,8 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tourism1/presentation/tourism_feed/controller/tourism_feed_controller.dart';
-import 'package:tourism1/themes/app_sizes.dart';
-import 'package:tourism1/themes/styles.dart';
+ import 'package:tourism1/themes/styles.dart';
 
 import 'common_widgets/sized_box.dart';
 
@@ -58,8 +57,8 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
               decoration: BoxDecoration(color: Colors.black.withOpacity(.5)),
               child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: AppPadding.twentyPadding,
-                      vertical: AppPadding.twentyPadding),
+                      horizontal: 20,
+                      vertical: 20),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,

@@ -17,6 +17,8 @@ class TourismFeedView extends GetView<TourismFeedController> {
   @override
   final controller = Get.put(TourismFeedController());
 
+  TourismFeedView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,34 +41,40 @@ class TourismFeedView extends GetView<TourismFeedController> {
       ),
       body: ListView(
         children: [
-          twentyHeightSizedBox,
+          const SizedBox(
+            height: 20,
+          ),
           // post Container
           Container(
             //height: Get.height*.25,
             decoration: const BoxDecoration(color: ColorConstants.whiteColor),
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                  vertical: AppPadding.fifteenPadding,
-                  horizontal: AppPadding.fifteenPadding),
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
               child: Column(
                 children: [
                   // post text field
                   Container(
-                    height: Get.height * .1,
+                    height: 100,
                     decoration: const BoxDecoration(
                         color: ColorConstants.veryLightGreyColor,
                         borderRadius: AppBorders.tenBorderRadius),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 10.0, vertical: 10.0),
+                          horizontal: 10.0, vertical: 15.0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const CircleAvatar(
-                            backgroundImage: AssetImage(ConstantImages.profile),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 4.0),
+                            child: CircleAvatar(
+                              backgroundImage:
+                                  AssetImage(ConstantImages.profile),
+                            ),
                           ),
-                          tenHeightSizedBox,
+                          const SizedBox(
+                            height: 10,
+                          ),
                           Expanded(
                             child: PostTextField(
                               hintStyle:
@@ -82,11 +90,15 @@ class TourismFeedView extends GetView<TourismFeedController> {
                     ),
                   ),
 
-                  tenHeightSizedBox,
+                  const SizedBox(
+                    height: 10,
+                  ),
                   const Divider(
                     color: ColorConstants.lightGreyColor,
                   ),
-                  tenHeightSizedBox,
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -97,17 +109,24 @@ class TourismFeedView extends GetView<TourismFeedController> {
                             SvgPicture.asset(
                               ConstantIcons.galleryGrey,
                             ),
-                            fiveWidthSizedBox,
+                            const SizedBox(
+                              width: 10,
+                            ),
                             SvgPicture.asset(
                               ConstantIcons.videoCamGrey,
                             ),
-                            fiveWidthSizedBox,
+                            const SizedBox(
+                              width: 10,
+                            ),
                             SvgPicture.asset(
                               ConstantIcons.locationGrey,
                             ),
                           ]),
                       ElevatedButton(
-                          onPressed: () {}, child: const Text('Post Details')),
+                          onPressed: () {
+                            Get.toNamed(Routes.postDestination);
+                          },
+                          child: const Text('Post Destination')),
                     ],
                   )
                 ],
@@ -122,40 +141,38 @@ class TourismFeedView extends GetView<TourismFeedController> {
           // categories list
           Container(
             height: Get.height * .08,
-            margin:
-                const EdgeInsetsDirectional.only(start: AppPadding.tenPadding),
+
+            margin: const EdgeInsetsDirectional.only(start: 10),
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: controller.categories.length,
               itemBuilder: (context, index) => Container(
-                margin: const EdgeInsets.symmetric(
-                    horizontal: AppPadding.fivePadding),
+                padding: const EdgeInsets.only(left: 5),
+
+                margin: const EdgeInsets.symmetric(horizontal: 5),
                 decoration: const BoxDecoration(
                   borderRadius: AppBorders.tenBorderRadius,
                   color: Colors.white,
                 ),
 
                 //  height: 70,
-                width: 150,
+                width: 160,
                 child: Row(
                   children: [
                     fiveWidthSizedBox,
-                    Expanded(
-                      flex: 2,
-                      child: SvgPicture.asset(
-                        controller.categories[index].values.single,
-                        color: ColorConstants.greenColor,
-                        height: 50,
-                      ),
+                    SvgPicture.asset(
+                      controller.categories[index].values.single,
+                      color: ColorConstants.greenColor,
+                      height: 50,
                     ),
                     fiveWidthSizedBox,
                     Expanded(
                       flex: 5,
                       child: Text(
                         controller.categories[index].keys.single,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
                         style: ConstantTextStyles.mediumSixteenDefaultTextStyle,
+                    overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
                       ),
                     )
                   ],
@@ -168,9 +185,7 @@ class TourismFeedView extends GetView<TourismFeedController> {
           // city filter
           Container(
             height: Get.height * .08,
-            margin: const EdgeInsetsDirectional.only(
-                start: AppPadding.fifteenPadding,
-                end: AppPadding.fifteenPadding),
+            margin: const EdgeInsetsDirectional.only(start: 15, end: 15),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -193,8 +208,7 @@ class TourismFeedView extends GetView<TourismFeedController> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Padding(
-                          padding: EdgeInsetsDirectional.only(
-                              start: AppPadding.fivePadding),
+                          padding: EdgeInsetsDirectional.only(start: 5),
                           child: Text(
                             'City: ',
                             style: ConstantTextStyles
@@ -214,8 +228,7 @@ class TourismFeedView extends GetView<TourismFeedController> {
                               mainAxisSize: MainAxisSize.min,
                               children: const [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.only(
-                                      start: AppPadding.fivePadding),
+                                  padding: EdgeInsetsDirectional.only(start: 5),
                                   child: Text(
                                     'Dubai',
                                     maxLines: 2,

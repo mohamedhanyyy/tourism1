@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../themes/app_sizes.dart';
-import '../themes/colors.dart';
+ import '../themes/colors.dart';
 import '../themes/styles.dart';
 import '../utils/paths/icons_path.dart';
 import 'common_widgets/cutsom_text_field.dart';
@@ -20,7 +19,7 @@ class PostWidget extends StatefulWidget {
   TextEditingController? commentCtrl;
   bool isComment = false;
 
-  PostWidget({
+  PostWidget({Key? key,
     required this.dummyLocation,
     required this.dummyPostDescription,
     required this.dummyUserName,
@@ -28,14 +27,14 @@ class PostWidget extends StatefulWidget {
     required this.dummyPostImage,
     required this.isComment,
     this.commentCtrl,
-  });
+  }) : super(key: key);
 }
 
 class _PostWidgetState extends State<PostWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: AppPadding.fifteenPadding),
+      padding: const EdgeInsets.symmetric(vertical: 15),
       child: Container(
         decoration: const BoxDecoration(color: ColorConstants.whiteColor),
         child: Column(
@@ -109,7 +108,7 @@ class _PostWidgetState extends State<PostWidget> {
                     children: [
                       SvgPicture.asset(ConstantIcons.likeGreen,
                           color: ColorConstants.greenColor),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       SvgPicture.asset(ConstantIcons.commentBlack),
@@ -124,7 +123,7 @@ class _PostWidgetState extends State<PostWidget> {
             // Likes Number
             const Padding(
               padding:
-                  EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),
+                  EdgeInsets.symmetric(horizontal: 15),
               child: Text(
                 '233 Likes',
                 style: ConstantTextStyles.regularFourteenDefaultTextStyle,
@@ -134,7 +133,7 @@ class _PostWidgetState extends State<PostWidget> {
             // Name of the user
             Padding(
               padding: const EdgeInsets.symmetric(
-                  horizontal: AppPadding.fifteenPadding),
+                  horizontal: 15),
               child: Text(
                 '${widget.dummyUserName} ',
                 style: ConstantTextStyles.boldSixteenDefaultTextStyle,
@@ -145,7 +144,7 @@ class _PostWidgetState extends State<PostWidget> {
             Padding(
               //  padding: const EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),
               padding: const EdgeInsetsDirectional.only(
-                  end: AppPadding.fifteenPadding, start: AppPadding.tenPadding),
+                  end: 15, start: 10),
               child: Row(
                 children: [
                   SvgPicture.asset(
@@ -163,7 +162,7 @@ class _PostWidgetState extends State<PostWidget> {
                           decoration: TextDecoration.underline,
                         )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   SvgPicture.asset(ConstantIcons.ratingGreen),
@@ -174,7 +173,7 @@ class _PostWidgetState extends State<PostWidget> {
             // Name of the place
             const Padding(
               padding:
-                  EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),
+                  EdgeInsets.symmetric(horizontal: 15),
               child: Text(
                 'Sahara Desert',
                 style: ConstantTextStyles.boldTwelvePoppinsTextStyle,
@@ -186,7 +185,7 @@ class _PostWidgetState extends State<PostWidget> {
             // Likes Number
             Padding(
               padding: const EdgeInsets.symmetric(
-                  horizontal: AppPadding.fifteenPadding),
+                  horizontal: 15),
               child: Text(
                 widget.dummyPostDescription,
                 maxLines: 4,
@@ -198,7 +197,7 @@ class _PostWidgetState extends State<PostWidget> {
             // Time of the description
             const Padding(
               padding:
-                  EdgeInsets.symmetric(horizontal: AppPadding.fifteenPadding),
+                  EdgeInsets.symmetric(horizontal: 15),
               child: Text(
                 '1h ago',
                 style: ConstantTextStyles.hintLightGrayTextStyle,
@@ -208,7 +207,7 @@ class _PostWidgetState extends State<PostWidget> {
             // Row of comment and view all comment
             Padding(
               padding: const EdgeInsets.symmetric(
-                  horizontal: AppPadding.fifteenPadding),
+                  horizontal: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -324,8 +323,8 @@ class _PostWidgetState extends State<PostWidget> {
             widget.isComment
                 ? Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: AppPadding.fifteenPadding,
-                        vertical: AppPadding.tenPadding),
+                        horizontal: 15,
+                        vertical: 10),
                     child: Row(
                       children: [
                         CircleAvatar(

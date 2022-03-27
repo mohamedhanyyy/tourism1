@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:tourism1/presentation/destination/controller/destination_controller.dart';
- import 'package:tourism1/themes/app_sizes.dart';
-import 'package:tourism1/themes/colors.dart';
+ import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/icons_path.dart';
 import 'package:tourism1/utils/paths/images_path.dart';
@@ -17,7 +16,6 @@ class DestinationView extends GetView<DestinationController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         elevation: 0,
         backgroundColor: ColorConstants.whiteColor,
@@ -27,7 +25,7 @@ class DestinationView extends GetView<DestinationController> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: AppPadding.tenPadding),
+            padding: const EdgeInsets.only(right: 10),
             child: IconButton(
               icon: SvgPicture.asset(ConstantIcons.alarm),
               onPressed: () {},
@@ -38,7 +36,7 @@ class DestinationView extends GetView<DestinationController> {
       backgroundColor: ColorConstants.whiteColor,
       body: Padding(
         padding:
-            const EdgeInsets.symmetric(horizontal: AppPadding.twelvePadding),
+            const EdgeInsets.symmetric(horizontal: 12),
         child: ListView(
           children: [
             const Text(
@@ -151,14 +149,14 @@ class DestinationView extends GetView<DestinationController> {
                   ),
                   twentyHeightSizedBox,
                   Padding(
-                    padding: const EdgeInsets.all(AppPadding.tenPadding),
+                    padding: const EdgeInsets.all(10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
                           'Religious landmarks',
-                          style:
-                              ConstantTextStyles.semiBoldEighteenPoppinsTextStyle,
+                          style: ConstantTextStyles
+                              .semiBoldEighteenPoppinsTextStyle,
                         ),
                         SizedBox(
                           height: 40,
@@ -192,7 +190,7 @@ class DestinationView extends GetView<DestinationController> {
                   twentyHeightSizedBox,
                   ExpansionTile(
                       childrenPadding:
-                          const EdgeInsets.all(AppPadding.tenPadding),
+                          const EdgeInsets.all(10),
                       title: const Text(
                         'Archaeological sites',
                         style:
@@ -233,7 +231,7 @@ class DestinationView extends GetView<DestinationController> {
                   twentyHeightSizedBox,
                   ExpansionTile(
                       childrenPadding:
-                          const EdgeInsets.all(AppPadding.tenPadding),
+                          const EdgeInsets.all(10),
                       title: const Text(
                         'public gardens',
                         style:

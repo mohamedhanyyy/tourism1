@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       theme: AppThemes.whiteTheme,
       debugShowCheckedModeBanner: false,
       title: 'Tourism App',
+
     );
   }
 }

@@ -14,7 +14,7 @@ class TourismFeedController extends GetxController {
   final String dummyUserImage = ConstantImages.profile;
   final String dummyPostImage = ConstantImages.mountain;
   List<Map<String, String>> categories = [
-    {'Tourist Attraction': ConstantIcons.noFlyingGreen},
+    {'Tourist Attractions': ConstantIcons.noFlyingGreen},
     {'Religious LandMarks': 'assets/icons/noun-mosque-2382544.svg'},
     {'Archaeological Sites': ConstantIcons.noAncientGreen},
     {'Public Gardens': ConstantIcons.noParkGreen},

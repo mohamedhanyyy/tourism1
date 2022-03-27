@@ -17,16 +17,12 @@ class FavouritePostView extends GetView<FavouritePostController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:  AppBar(
-        leading: IconButton(onPressed: (){
-          Get.back();
-        }, icon: const Icon(Icons.arrow_back,color: ColorConstants.blackColor,)),
         title: const Text('Favourite',
           style: ConstantTextStyles.mediumHeadlineBlackPoppinsTextStyle,
         ),
         actions: [
           IconButton(onPressed: (){
-           // Get.toNamed(Routes.tourismFavourite);
-          }, icon: const Icon(Icons.notifications,color: ColorConstants.greenColor,))
+           }, icon: const Icon(Icons.notifications,color: ColorConstants.greenColor,))
         ],
       ),
       //Post with comment

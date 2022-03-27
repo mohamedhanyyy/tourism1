@@ -3,28 +3,35 @@ import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:get/get.dart';
 import 'package:tourism1/presentation/post_destination/controller/post_destination_controller.dart';
 import 'package:tourism1/themes/colors.dart';
+import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/widgets/common_widgets/cutsom_text_field.dart';
 import 'package:tourism1/widgets/common_widgets/pics.dart';
 
-class PostDestination extends GetView<PostDestinationController> {
+class PostDestinationView extends GetView<PostDestinationController> {
   final _destinationNameController = TextEditingController();
   final _destinationBriefController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const Text("data 000"),
-            const Text("data 0000000"),
-            _imagesBarWidget(),
-            const Text("data 000"),
-            const Text("data 0000000"),
-            _videoBarWidget(),
-            _formFieldsColumn()
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Post Destination',style: ConstantTextStyles.headLineTextStyle),
+
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(10.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const Text("data 000"),
+              const Text("data 0000000"),
+              _imagesBarWidget(),
+              const Text("data 000"),
+              const Text("data 0000000"),
+              _videoBarWidget(),
+              _formFieldsColumn()
+            ],
+          ),
         ),
       ),
     );
@@ -56,7 +63,7 @@ class PostDestination extends GetView<PostDestinationController> {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
-        children: [
+        children: const [
           Icon(Icons.add),
           Text("+"),
         ],
@@ -79,28 +86,28 @@ class PostDestination extends GetView<PostDestinationController> {
             controller: _destinationBriefController,
             hint: "Destination Brief",
             maxLines: 5),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         FormFieldsWidgets.normalTextField(
           controller: _destinationNameController,
           hint: "Destination Name",
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         FormFieldsWidgets.normalTextField(
           controller: _destinationNameController,
           hint: "Destination Ratio",
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         FormFieldsWidgets.normalTextField(
           controller: _destinationNameController,
           hint: "Destination Ratio",
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
       ],

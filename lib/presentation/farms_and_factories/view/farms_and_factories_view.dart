@@ -28,7 +28,7 @@ class FarmsAndFactoriesView extends GetView<FarmsAndFactoriesController> {
         bottom: PreferredSize(
 
           child: Padding(
-            padding: const EdgeInsets.all(AppPadding.tenPadding),
+            padding: const EdgeInsets.all(10),
             child: CustomTextField(
               controller: controller.farmSearchController,
               suffixIcon: const Icon(Icons.search),
@@ -48,7 +48,7 @@ class FarmsAndFactoriesView extends GetView<FarmsAndFactoriesController> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppPadding.tenPadding),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: ListView(
           children: [
             GridView.builder(
@@ -61,7 +61,7 @@ class FarmsAndFactoriesView extends GetView<FarmsAndFactoriesController> {
                 return FittedBox(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        vertical:  AppPadding.fivePadding),
+                        vertical:  5),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -87,7 +87,7 @@ class FarmsAndFactoriesView extends GetView<FarmsAndFactoriesController> {
                                 color: ColorConstants.lightGreen,
                                 child: Padding(
                                   padding: const EdgeInsets.all(
-                                      AppPadding.eightPadding),
+                                      8),
                                   child: Text(
                                     controller.farmAndFactoryList[index].name!,
                                     style: ConstantTextStyles

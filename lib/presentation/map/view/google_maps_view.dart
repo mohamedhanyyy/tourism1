@@ -11,12 +11,14 @@ import '../../../widgets/common_widgets/cutsom_text_field.dart';
 
 class GoogleMapsView extends GetView {
   @override
-  TextEditingController controller = TextEditingController();
+  final TextEditingController controller = TextEditingController();
 
   static const CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
     zoom: 14.4746,
   );
+
+  GoogleMapsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +91,7 @@ class GoogleMapsView extends GetView {
                             height: 133,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
-                              image:  const DecorationImage(
+                              image: const DecorationImage(
                                 fit: BoxFit.fill,
                                 image: AssetImage(ConstantImages.mosque),
                               ),
@@ -119,7 +121,7 @@ class GoogleMapsView extends GetView {
                                           .semiBoldFourteenGreenPoppinsTextStyle,
                                     ),
                                     const SizedBox(width: 3),
-                                    SvgPicture.asset(ConstantIcons.alarm)
+                                    SvgPicture.asset(ConstantIcons.temp)
                                   ],
                                 ),
                               ),
