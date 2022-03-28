@@ -61,6 +61,7 @@ class PostDestinationView extends GetView<PostDestinationController> {
     );
   }
 
+
   _buildDottedImage({String title = 'Upload Another Image' }) {
     return Container(
       height: 90.0,
@@ -82,9 +83,7 @@ class PostDestinationView extends GetView<PostDestinationController> {
             style: ConstantTextStyles.regularNineGreenDefaultTextStyle),
 
           ],
-        ),
-      ),
-    );
+        ),));
   }
 
   Widget _formFieldsColumn() {
