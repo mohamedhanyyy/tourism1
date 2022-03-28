@@ -17,6 +17,7 @@ class FavouritePostView extends GetView<FavouritePostController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:  AppBar(
+
         title: const Text('Favourite',
           style: ConstantTextStyles.mediumHeadlineBlackPoppinsTextStyle,
         ),

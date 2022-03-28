@@ -4,6 +4,7 @@ import 'package:tourism1/presentation/destination/view/destination_view.dart';
  import 'package:tourism1/presentation/favourite_posts/favourite_post_view/favourite_post_view.dart';
 import 'package:tourism1/presentation/layout_page/controller/layout_controller.dart';
 import 'package:tourism1/presentation/map/view/google_maps_view.dart';
+import 'package:tourism1/presentation/tourism_favourite/view/tourism_favourite_view.dart';
  import 'package:tourism1/presentation/tourism_feed/view/tourism_feed_view.dart';
 import 'package:tourism1/themes/colors.dart';
 import 'package:tourism1/utils/paths/icons_path.dart';
@@ -22,7 +23,7 @@ class _LayoutPageState extends State<LayoutPage> {
   // LayoutController controller = Get.find<LayoutController>();
   List<Widget> bodyContentTab = [
       TourismFeedView(),
-      FavouritePostView(),
+      TourismFavouriteView(),
     GoogleMapsView(),
     DestinationView(),
   ];

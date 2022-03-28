@@ -20,7 +20,7 @@ class TourismFavouriteView extends GetView<TourismFavouriteController> {
     return Scaffold(
       backgroundColor: ColorConstants.whiteColor,
       appBar: AppBar(
-        centerTitle: false,
+
         title: const Text('Favourite',
           textAlign: TextAlign.start,
           style: ConstantTextStyles.mediumHeadlineBlackPoppinsTextStyle,

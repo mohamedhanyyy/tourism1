@@ -1,4 +1,5 @@
 import 'package:dotted_decoration/dotted_decoration.dart';
+import 'package:flutter/cupertino.dart';
  import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tourism1/presentation/post_destination/controller/post_destination_controller.dart';
@@ -15,6 +16,9 @@ class PostDestinationView extends GetView<PostDestinationController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: ColorConstants.blackColor
+        ),
         title: const Text('Post Destination',style: ConstantTextStyles.headLineTextStyle),
 
       ),
@@ -23,13 +27,17 @@ class PostDestinationView extends GetView<PostDestinationController> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const Text("data 000"),
-              const Text("data 0000000"),
+              // const Text("data 000"),
+              // const Text("data 0000000"),
               _imagesBarWidget(),
-              const Text("data 000"),
-              const Text("data 0000000"),
+              // const Text("data 000"),
+              // const Text("data 0000000"),
+              const SizedBox(height: 20,),
               _videoBarWidget(),
-              _formFieldsColumn()
+              const SizedBox(height: 10,),
+
+              _formFieldsColumn(),
+
             ],
           ),
         ),
@@ -41,7 +49,7 @@ class PostDestinationView extends GetView<PostDestinationController> {
     return Row(
       children: [
         ConstantPics.commonAssetImage(),
-        const SizedBox(width: 5),
+        const SizedBox(width: 10),
         _buildDottedImage()
       ],
     );
@@ -63,9 +71,15 @@ class PostDestinationView extends GetView<PostDestinationController> {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
           Icon(Icons.add),
-          Text("+"),
+          SizedBox(height: 10,),
+          Text('Upload Another Image',
+          textAlign: TextAlign.center,
+          style: ConstantTextStyles.normalFourteenGreenDefaultTextStyle),
+
         ],
       ),
     );
@@ -92,6 +106,7 @@ class PostDestinationView extends GetView<PostDestinationController> {
         FormFieldsWidgets.normalTextField(
           controller: _destinationNameController,
           hint: "Destination Name",
+
         ),
         const SizedBox(
           height: 5,

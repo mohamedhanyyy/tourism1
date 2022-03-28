@@ -31,7 +31,6 @@ class TourismFeedView extends GetView<TourismFeedController> {
         actions: [
           IconButton(
               onPressed: () {
-                Get.toNamed(Routes.tourismFavourite);
               },
               icon: const Icon(
                 Icons.notifications,
@@ -123,6 +122,9 @@ class TourismFeedView extends GetView<TourismFeedController> {
                             ),
                           ]),
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: ColorConstants.greenColor,
+                        ),
                           onPressed: () {
                             Get.toNamed(Routes.postDestination);
                           },

@@ -12,7 +12,9 @@ class ConstantPics {
       height: height,
       width: width,
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
+            
             fit: BoxFit.fill,
         image: AssetImage(assetImagePath),
       )),
