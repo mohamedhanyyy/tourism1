@@ -21,24 +21,7 @@ class TourismFeedView extends GetView<TourismFeedController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorConstants.veryLightGreyColor,
-      appBar: AppBar(
-        title: const Text(
-          'Tourism Feed',
-          style: ConstantTextStyles.mediumHeadlineBlackPoppinsTextStyle,
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {
-              },
-              icon: const Icon(
-                Icons.notifications,
-                color: ColorConstants.greenColor,
-              ))
-        ],
-      ),
-      body: ListView(
+    return  ListView(
         children: [
           const SizedBox(
             height: 20,
@@ -268,7 +251,6 @@ class TourismFeedView extends GetView<TourismFeedController> {
                       dummyUserImage: controller.dummyUserImage,
                       dummyPostImage: controller.dummyPostImage)),
         ],
-      ),
-    );
+      );
   }
 }

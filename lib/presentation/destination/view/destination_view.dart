@@ -15,26 +15,7 @@ class DestinationView extends GetView<DestinationController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: ColorConstants.whiteColor,
-        title: const Text(
-          'Destinations',
-          style: ConstantTextStyles.headLineTextStyle,
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: IconButton(
-              icon: SvgPicture.asset(ConstantIcons.alarm),
-              onPressed: () {},
-            ),
-          )
-        ],
-      ),
-      backgroundColor: ColorConstants.whiteColor,
-      body: Padding(
+    return  Padding(
         padding:
             const EdgeInsets.symmetric(horizontal: 12),
         child: ListView(
@@ -290,7 +271,6 @@ class DestinationView extends GetView<DestinationController> {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }

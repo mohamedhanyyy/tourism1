@@ -15,26 +15,7 @@ class TourismFavouriteView extends GetView<TourismFavouriteController> {
 
   @override
   Widget build(BuildContext context) {
-
-
-    return Scaffold(
-      backgroundColor: ColorConstants.whiteColor,
-      appBar: AppBar(
-
-        title: const Text('Favourite',
-          textAlign: TextAlign.start,
-          style: ConstantTextStyles.mediumHeadlineBlackPoppinsTextStyle,
-        ),
-
-        actions: [
-          IconButton(onPressed: () {
-            // Get.toNamed(Routes.tourismFavourite);
-          },
-              icon: const Icon(
-                Icons.notifications, color: ColorConstants.greenColor,))
-        ],
-      ),
-      body: Padding(
+    return  Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
         child: GridView.builder(
             itemCount: 15,
@@ -49,8 +30,7 @@ class TourismFavouriteView extends GetView<TourismFavouriteController> {
             ),
 
             itemBuilder: (context, index) => favouriteContainer()),
-      ),
-    );
+      );
   }
 
   Widget favouriteContainer() {

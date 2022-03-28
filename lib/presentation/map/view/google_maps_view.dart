@@ -22,18 +22,7 @@ class GoogleMapsView extends GetView {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Map',
-          style: ConstantTextStyles.headLineTextStyle,
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {}, icon: SvgPicture.asset(ConstantIcons.alarm)),
-        ],
-      ),
-      body: ListView(
+    return  ListView(
         children: [
           SizedBox(
             height: 56,
@@ -156,7 +145,6 @@ class GoogleMapsView extends GetView {
             physics: const BouncingScrollPhysics(),
           ),
         ],
-      ),
-    );
+      );
   }
 }
