@@ -30,7 +30,7 @@ class _ButtonNaviBarState extends State<ButtonNaviBar> {
           painter: CustomPainterNav(),
 
 
-          child: Container(
+          child: SizedBox(
             height: 70.0,
             // padding: const EdgeInsets.only(top: 15.0),
             // color: Colors.transparent,
