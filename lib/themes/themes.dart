@@ -15,5 +15,8 @@ class AppThemes {
          statusBarColor: ColorConstants.whiteColor,
        ),
      ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Color(0x00ffffff),
+    )
   );
 }

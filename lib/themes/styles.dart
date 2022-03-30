@@ -79,6 +79,12 @@ class ConstantTextStyles {
     fontSize: 16,
   );
 
+  static const TextStyle mediumTwelveDefaultTextStyle = TextStyle(
+    color: ColorConstants.greyColor,
+    fontSize: 12,
+    fontFamily: FontFamily.poppinsMedium
+  );
+
   ///  TODO SemiBold Black text styles
   static const TextStyle semiBoldEighteenPoppinsTextStyle = TextStyle(
     color: ColorConstants.blackColor,

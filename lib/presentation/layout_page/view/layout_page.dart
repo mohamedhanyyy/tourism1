@@ -29,8 +29,9 @@ class _LayoutPageState extends State<LayoutPage> {
   List<Widget> bodyContentTab = [
     TourismFeedView(),
     TourismFavouriteView(),
-    GoogleMapsView(),
-    DestinationView(),
+    // GoogleMapsView(),
+    Container(color: Colors.yellow,height: double.infinity,),
+    const DestinationView(),
   ];
 
 List<AppBar> appBarList= [
@@ -51,17 +52,17 @@ List<AppBar> appBarList= [
         print(" layout page index :${logic.tabIndex.value}");
 
         return Scaffold(
+          extendBody: true, // very important as note
           backgroundColor: ColorConstants.lightGreyColor,
           appBar: appBarList[logic.tabIndex.value],
           body: bodyContentTab[logic.tabIndex.value],
           bottomNavigationBar: const ButtonNaviBar(),
           floatingActionButton: FloatingActionButton(
             onPressed: () {},
-            backgroundColor: ColorConstants.whiteColor,
+            // backgroundColor: ColorConstants.whiteColor,
             child: Image.asset(ConstantIcons.logoIcon),
           ),
-          floatingActionButtonLocation: FloatingActionButtonLocation
-              .miniCenterDocked,
+          floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
         );
       },
     );

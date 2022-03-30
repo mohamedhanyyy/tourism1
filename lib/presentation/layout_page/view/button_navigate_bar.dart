@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
  import 'package:get/get_state_manager/src/rx_flutter/rx_getx_widget.dart';
  import 'package:tourism1/presentation/layout_page/controller/layout_controller.dart';
 import 'package:tourism1/themes/colors.dart';
+import 'package:tourism1/themes/styles.dart';
 import 'package:tourism1/utils/paths/icons_path.dart';
 
 class ButtonNaviBar extends StatefulWidget {
@@ -23,16 +24,16 @@ class _ButtonNaviBarState extends State<ButtonNaviBar> {
       builder: (controller) {
         print("BNB : ${controller.tabIndex.value}");
 
+
         return CustomPaint(
           size: const Size(double.infinity, 70),
-          //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
           painter: CustomPainterNav(),
 
 
           child: Container(
             height: 70.0,
-            padding: const EdgeInsets.only(top: 15.0),
-
+            // padding: const EdgeInsets.only(top: 15.0),
+            // color: Colors.transparent,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -106,7 +107,7 @@ class _ButtonNaviBarState extends State<ButtonNaviBar> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           icons,
-          Text(title)
+          Text(title,style: ConstantTextStyles.mediumTwelveDefaultTextStyle,)
         ],
       ),
     );
@@ -157,14 +158,14 @@ class CustomPainterNav extends CustomPainter {
 
     Path path = Path()
       ..moveTo(0, 35)
-      ..quadraticBezierTo(0, 0, size.width * 0.125, 00)
+      ..quadraticBezierTo(0, 0, 0, 00)
       ..lineTo(size.width * 0.300, 00)
-      ..quadraticBezierTo(size.width * 0.375, 00, size.width * 0.385, 20)
-      ..arcToPoint(Offset(size.width * 0.615, 20),
-          radius: const Radius.circular(50.0), clockwise: false)
-      ..quadraticBezierTo(size.width * 0.625, 00, size.width * 0.70, 00)
+      ..quadraticBezierTo(size.width * 0.375, 00, size.width * 0.385, 5)
+      ..arcToPoint(Offset(size.width * 0.615, 5),
+          radius: const Radius.circular(47.0), clockwise: false)
+      ..quadraticBezierTo(size.width * 0.625, 00, size.width * 0.70, 0)
       ..lineTo(size.width * 0.875, 00)
-      ..quadraticBezierTo(size.width, 00, size.width, 35)
+      ..quadraticBezierTo(size.width, 00, size.width, 0)
       ..lineTo(size.width, size.height)..lineTo(0, size.height)
       ..close();
     canvas.drawPath(path, paint);
