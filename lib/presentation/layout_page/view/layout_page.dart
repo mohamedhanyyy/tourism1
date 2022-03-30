@@ -29,8 +29,7 @@ class _LayoutPageState extends State<LayoutPage> {
   List<Widget> bodyContentTab = [
     TourismFeedView(),
     TourismFavouriteView(),
-    // GoogleMapsView(),
-    Container(color: Colors.yellow,height: double.infinity,),
+    GoogleMapsView(),
     const DestinationView(),
   ];
 
