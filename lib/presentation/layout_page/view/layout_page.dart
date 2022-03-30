@@ -58,7 +58,7 @@ List<AppBar> appBarList= [
           bottomNavigationBar: const ButtonNaviBar(),
           floatingActionButton: FloatingActionButton(
             onPressed: () {},
-            // backgroundColor: ColorConstants.whiteColor,
+            backgroundColor: ColorConstants.whiteColor,
             child: Image.asset(ConstantIcons.logoIcon),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
