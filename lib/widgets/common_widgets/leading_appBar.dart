@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_svg/svg.dart';
 
-import '../../themes/colors.dart';
+import '../../utils/paths/icons_path.dart';
 
 class CommonLeadingAppBar extends StatelessWidget {
   const CommonLeadingAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        Icons.arrow_back_ios,
-        color: ColorConstants.blackColor,
-      ),
-      onPressed: () {
-        Get.back();
-      },
+    return SvgPicture.asset(
+      ConstantIcons.backArrow,
     );
   }
 }

@@ -3,6 +3,7 @@ const String base = 'assets/icons';
 abstract class ConstantIcons {
   static const String alarm = '$base/alarm.svg';
   static const String arrow = '$base/arrow.svg';
+  static const String backArrow = '$base/back_arrow.svg';
   static const String destinationTab = '$base/distenation_tab.png';
   static const String logoIcon = '$base/logo.png';
    static const String videoCamGrey = '$base/videocam_black_24dp.svg';

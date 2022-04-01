@@ -16,6 +16,7 @@ class PostTextField extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: 5,
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,

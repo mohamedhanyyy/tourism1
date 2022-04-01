@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +12,7 @@ class CarouselWithIndicatorDemo extends StatefulWidget {
     return _CarouselWithIndicatorState();
   }
 
-  CarouselWithIndicatorDemo({Key? key}) : super(key: key);
+  const CarouselWithIndicatorDemo({Key? key}) : super(key: key);
 }
 
 class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
@@ -24,13 +23,13 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 //adding dummy line and subline with image to the stack widget having theese three items
   List<Widget> stackPicsItems() {
     List<Widget> list = [];
-    controller.dummyListDataCarousle.forEach((item) {
+    for (var item in controller.dummyListDataCarousle) {
       list.add(stackOfImage(
         image: item['image name'],
         adLine: item['ad line'],
         adSub: item['ad subline'],
       ));
-    });
+    }
     return list;
   }
 
@@ -42,7 +41,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
   }) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
             width: Get.width,
             height: Get.height * .25,
             child: Image(
@@ -96,6 +95,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
               viewportFraction: 1.0,
               autoPlay: true,
               enlargeCenterPage: false,
+
               onPageChanged: (index, reason) {
                 setState(() {
                   _current = index;

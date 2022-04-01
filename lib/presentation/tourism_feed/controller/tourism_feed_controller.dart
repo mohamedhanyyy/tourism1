@@ -10,6 +10,7 @@ class TourismFeedController extends GetxController {
   final String dummyPostDescription =
       'this is a trial to get every thing okay and no matter what happens Dummy DummyDummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy Dummy';
 
+
   final String dummyUserName = 'Ahmed Jalal';
   final String dummyUserImage = ConstantImages.profile;
   final String dummyPostImage = ConstantImages.mountain;
