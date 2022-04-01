@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../../utils/paths/icons_path.dart';
 
@@ -8,8 +9,19 @@ class CommonLeadingAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      ConstantIcons.backArrow,
+    return FittedBox(
+      child: SizedBox(
+        height: 12,
+        width: 6,
+        child: InkWell(
+          onTap: () {
+            Get.back();
+          },
+          child: SvgPicture.asset(
+            ConstantIcons.backArrow,
+          ),
+        ),
+      ),
     );
   }
 }
